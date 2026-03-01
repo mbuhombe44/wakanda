@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services | The Wakanda Forex</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#000;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:#000;
+}
+
+.container{
+  width:85%;
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+header{
+  padding:20px 10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:999;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  border-radius:15px;
+  margin:10px 0;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav li a{
+  font-weight:600;
+}
+
+.btn{
+  padding:10px 22px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:#d67342;
+  border:none;
+  color:#fff;
+}
+
+/* ================= MOBILE HAMBURGER ================= */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:space-between;
+  width:25px;
+  height:20px;
+  cursor:pointer;
+}
+
+.hamburger div{
+  height:3px;
+  width:100%;
+  background:#000;
+  border-radius:3px;
+  transition:0.3s;
+}
+
+.mobile-menu{
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  top:70px;
+  right:10px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+  padding:15px 20px;
+  width:200px;
+  z-index:998;
+}
+
+.mobile-menu li{
+  margin:10px 0;
+}
+
+.mobile-menu li a{
+  font-weight:600;
+}
+
+/* Hamburger animation when open */
+.hamburger.active div:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.hamburger.active div:nth-child(2){
+  opacity:0;
+}
+.hamburger.active div:nth-child(3){
+  transform:rotate(-45deg) translate(5px,-5px);
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  nav ul{
+    display:none;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .mobile-menu.show{
+    display:flex;
+  }
+}
+
+/* ================= PAGE INTRO ================= */
+.page-header{
+  padding:70px 20px;
+  background: linear-gradient(90deg, #ffffff 0%, #f0ece9 25%, #f6f3f0 50%, #f1eeea 75%);
+  background-size: 200% 100%;
+  animation: gradientWave 4s ease-in-out infinite;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+/* WATERMARK */
+.hero-watermark{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:400px;
+  max-width:65%;
+  opacity:0.05;
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+  filter:grayscale(100%);
+}
+
+.page-header > *:not(.hero-watermark){
+  position:relative;
+  z-index:1;
+}
+
+@keyframes gradientWave {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
+
+.page-header h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.page-header h2 span{
+  color:#ff6a00;
+}
+
+.page-header p{
+  max-width:650px;
+  font-size:17px;
+  color:#333;
+  margin:auto;
+}
+
+/* ================= SERVICES SECTION ================= */
+section{
+  padding:60px 0;
+  border-bottom:1px solid #ebe6e2;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title h3{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#333;
+  max-width:700px;
+  margin:auto;
+}
+
+/* SERVICE GRID */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* MODERN CARD STYLE */
+.service-card{
+  background: linear-gradient(145deg,#ffffff,#f4f4f4);
+  padding:35px;
+  border-radius:18px;
+  transition:all 0.4s ease;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+}
+
+/* orange top line */
+.service-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:#ff6a00;
+}
+
+.service-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.service-card h4{
+  color:#ff6a00;
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.service-card p{
+  color:#444;
+  line-height:1.7;
+  font-size:15px;
+}
+
+/* ================= PROCESS ================= */
+.process{
+  margin-top:60px;
+}
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.step{
+  background: linear-gradient(145deg,#ffffff,#f3f3f3);
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+  transition:0.4s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.step::before{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:#ff6a00;
+  transform:scaleX(0);
+  transition:0.4s ease;
+}
+
+.step:hover::before{
+  transform:scaleX(1);
+}
+
+.step:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+.step span{
+  display:block;
+  font-size:26px;
+  color:#ff6a00;
+  margin-bottom:10px;
+  font-weight:bold;
+}
+
+.step h5{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.step p{
+  font-size:14px;
+  color:#444;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#000;
+  padding:60px 0 30px;
+  margin-top:40px;
+  color:#fff;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  width:85%;
+  margin:auto;
+}
+
+footer h4{
+  margin-bottom:15px;
+  color:#ff6a00;
+}
+
+footer a{
+  display:block;
+  color:#fff;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+footer a:hover{
+  color:#ff6a00;
+}
+
+footer p{
+  font-size:14px;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  font-size:13px;
+  color:#ff6a00;
+}
+
+.custom-icon {
+    width: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="logo"><img src="images/logo.png" alt="WakandaFX Logo" class="custom-icon" /></div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="pricing.html" class="btn btn-primary">Join Now</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="pricing.html" class="btn btn-primary">Join Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-header">
+  <!-- WATERMARK LOGO -->
+  <img src="images/logo.png" alt="" class="hero-watermark" aria-hidden="true" />
+
+  <h2>Our <span>Services</span></h2>
+  <p>
+    We provide professional forex trading services designed to deliver
+    consistency, transparency and long-term growth.
+  </p>
+</div>
+
+<section>
+  <div class="section-title">
+    <h3>What We Offer</h3>
+    <p>
+      Our services are structured to meet the needs of traders,
+      investors and business partners at all levels.
+    </p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h4>Local Tanzania Agent</h4>
+      <p>
+        We help you make secure deposits and withdrawals with trusted brokers. Get personalized assistance with payment processing and account management from our local team.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h4>Mentorship Programs</h4>
+      <p>
+        A structured and comprehensive mentorship program designed to cultivate disciplined, confident traders, equipping participants with practical skills and delivering real, measurable results in the market.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h4>Trading Signals</h4>
+      <p>
+        Receive high-probability trade alerts, meticulously crafted and supported by robust risk management strategies, empowering traders to make informed decisions and achieve consistently optimal results in the market
+      </p>
+    </div>
+  </div>
+
+  <div class="process">
+    <div class="section-title">
+      <h3>How We Work</h3>
+      <p>
+        A structured and transparent process designed
+        to protect capital and grow steadily.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="step">
+        <span>01</span>
+        <h5>Market Analysis</h5>
+        <p>Deep technical and structural market evaluation.</p>
+      </div>
+
+      <div class="step">
+        <span>02</span>
+        <h5>Trade Execution</h5>
+        <p>Precision entries with predefined risk.</p>
+      </div>
+
+      <div class="step">
+        <span>03</span>
+        <h5>Risk Control</h5>
+        <p>Strict stop-loss and position sizing.</p>
+      </div>
+
+      <div class="step">
+        <span>04</span>
+        <h5>Performance Review</h5>
+        <p>Continuous evaluation and optimization.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Social Media</h4>
+      <a href="#">Instagram</a>
+      <a href="#">Telegram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="results.html">Results</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+
+    <div>
+      <h4>Contacts</h4>
+      <p>Email: keniziodenis50@gmail.com</p>
+      <p>WhatsApp: +255 741 642 682</p>
+      <p>Tanzania</p>
+    </div>
+
+    <div>
+      <h4>Risk Disclosure</h4>
+      <p>
+        Trading forex involves significant risk.
+        Past performance does not guarantee future results.
+        This is not financial advice.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 The Wakanda. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>

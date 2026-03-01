@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exness - Best Forex Broker | Unlimited Leverage & Lowest Spreads</title>
+<link rel="preconnect" href="https://exness.com">
+<link rel="dns-prefetch" href="https://exness.com">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#000;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:#000;
+}
+
+.container{
+  width:85%;
+  margin:auto;
+}
+
+/* NAVBAR */
+header{
+  padding:20px 10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:10px;
+  background:#fff;
+  z-index:999;
+  box-shadow:0 2px 6px rgba(249,246,246,0.1);
+  border-radius:15px;
+  margin:10px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#000;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav li a{
+  font-weight:600;
+  transition:0.3s;
+}
+
+nav li a:hover{
+  color:#ff6a00;
+}
+
+.btn{
+  padding:10px 22px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+  border:none;
+}
+
+.btn:hover{
+  opacity:0.85;
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:#ff6a00;
+  color:#fff;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:1000;
+}
+
+.hamburger div{
+  width:25px;
+  height:3px;
+  background:#000;
+  border-radius:2px;
+  transition:all 0.4s ease;
+}
+
+nav ul.mobile-menu{
+  display:none;
+  flex-direction:column;
+  gap:15px;
+  position:absolute;
+  top:70px;
+  right:20px;
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+nav ul.mobile-menu.show{
+  display:flex;
+}
+
+.hamburger.active div:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+.hamburger.active div:nth-child(2){ opacity:0; }
+.hamburger.active div:nth-child(3){ transform:rotate(-45deg) translate(6px,-6px); }
+
+@media(max-width:768px){
+  nav ul.desktop-menu{ display:none; }
+  .hamburger{ display:flex; }
+}
+
+/* HERO */
+.hero{
+  padding:80px 20px 70px;
+  text-align:center;
+  background:linear-gradient(135deg,#ffffff 0%,#f5f2f0 50%,#fff9f7 100%);
+  border-radius:20px;
+  margin-bottom:40px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  animation:fadeInDown 0.8s ease-out;
+  position:relative;
+  overflow:hidden;
+}
+
+@keyframes fadeInDown{
+  from{ opacity:0; transform:translateY(-30px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+/* Exness logo diagonal radiate — bottom-left → top-right */
+.hero-exness-radiate{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  user-select:none;
+  z-index:1;
+  overflow:hidden;
+}
+.hero-exness-radiate::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(255,255,255,0.94) 0%,
+    rgba(255,255,255,0.50) 30%,
+    rgba(255,255,255,0.20) 50%,
+    rgba(255,255,255,0.55) 72%,
+    rgba(255,255,255,0.94) 100%
+  );
+}
+.hero-exness-radiate img{
+  position:absolute;
+  filter:grayscale(15%);
+  transform:rotate(-32deg);
+  transform-origin:center;
+  pointer-events:none;
+}
+.hero-exness-radiate img:nth-child(1){ width:80px;  bottom:-4%; left:-2%;  opacity:0.04; }
+.hero-exness-radiate img:nth-child(2){ width:100px; bottom:8%;  left:9%;   opacity:0.08; }
+.hero-exness-radiate img:nth-child(3){ width:118px; bottom:20%; left:21%;  opacity:0.13; }
+.hero-exness-radiate img:nth-child(4){ width:130px; bottom:34%; left:34%;  opacity:0.16; transform:rotate(-30deg); }
+.hero-exness-radiate img:nth-child(5){ width:130px; bottom:48%; left:47%;  opacity:0.14; transform:rotate(-32deg); }
+.hero-exness-radiate img:nth-child(6){ width:118px; bottom:62%; left:60%;  opacity:0.10; }
+.hero-exness-radiate img:nth-child(7){ width:100px; bottom:74%; left:72%;  opacity:0.07; }
+.hero-exness-radiate img:nth-child(8){ width:80px;  bottom:86%; left:84%;  opacity:0.03; }
+
+.hero-content{ position:relative; z-index:2; }
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:20px;
+  color:#000;
+  line-height:1.3;
+}
+
+.hero h1 span{
+  color:#ff6a00;
+  display:block;
+  font-size:56px;
+  font-weight:700;
+  margin:10px 0;
+}
+
+.hero p{
+  font-size:18px;
+  color:#555;
+  max-width:700px;
+  margin:0 auto 30px;
+  line-height:1.7;
+}
+
+/* CTA button replacing trust score */
+.hero-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(135deg,#ff6a00,#ff8533);
+  color:#fff;
+  padding:16px 36px;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:700;
+  text-decoration:none;
+  margin-top:20px;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 8px 28px rgba(255,106,0,0.35);
+  transition:all 0.3s ease;
+  letter-spacing:0.3px;
+}
+.hero-cta-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 36px rgba(255,106,0,0.45);
+  background:linear-gradient(135deg,#e55a00,#ff6a00);
+}
+.hero-cta-btn:active{
+  transform:translateY(-1px);
+}
+.hero-cta-btn svg{
+  flex-shrink:0;
+  transition:transform 0.3s;
+}
+.hero-cta-btn:hover svg{
+  transform:translateX(4px);
+}
+
+/* FEATURES HIGHLIGHT */
+.features-highlight{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+  margin-bottom:40px;
+  animation:fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInUp{
+  from{ opacity:0; transform:translateY(40px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.feature-box{
+  background:linear-gradient(135deg,#fff9f7,#f5f0ec);
+  padding:18px 15px;
+  border-radius:12px;
+  text-align:center;
+  border:2px solid transparent;
+  transition:all 0.3s ease;
+}
+
+.feature-box:hover{
+  border-color:#ff6a00;
+  transform:translateY(-5px);
+  box-shadow:0 10px 30px rgba(255,106,0,0.15);
+}
+
+.feature-icon{ font-size:36px; margin-bottom:8px; }
+.feature-box h3{ font-size:20px; margin-bottom:8px; color:#000; }
+.feature-box p{ color:#666; font-size:15px; }
+
+/* PLATFORM NOTE */
+.note-section{
+  background:linear-gradient(135deg,#fff9f7,#f5f0ec);
+  padding:24px 28px;
+  border-radius:12px;
+  border-left:5px solid #ff6a00;
+  margin-bottom:40px;
+}
+
+.note-section h4{ color:#ff6a00; margin-bottom:10px; font-size:18px; }
+.note-section p{ color:#666; line-height:1.8; font-size:15px; }
+
+/* SECTION TITLE */
+.section-title{ text-align:center; margin-bottom:30px; }
+.section-title h2{ font-size:42px; margin-bottom:12px; color:#000; }
+.section-title p{ font-size:18px; color:#666; max-width:600px; margin:0 auto; }
+
+/* ACCOUNTS SECTION */
+.accounts-section{ padding:40px 0; }
+
+/* 5 cards: 3 on top row, 2 centered on bottom */
+.accounts-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-bottom:40px;
+  align-items:stretch;
+}
+
+.accounts-grid-bottom{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-bottom:40px;
+  max-width:66%;
+  margin-left:auto;
+  margin-right:auto;
+  align-items:stretch;
+}
+
+@media(max-width:900px){
+  .accounts-grid{ grid-template-columns:repeat(2,1fr); }
+  .accounts-grid-bottom{ grid-template-columns:repeat(2,1fr); max-width:100%; }
+}
+@media(max-width:520px){
+  .accounts-grid{ grid-template-columns:1fr; }
+  .accounts-grid-bottom{ grid-template-columns:1fr; max-width:100%; }
+}
+
+.account-card{
+  background:#f8f6f4;
+  padding:22px 18px;
+  border-radius:16px;
+  border:2px solid transparent;
+  transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  animation:slideUp 0.6s ease-out backwards;
+}
+
+.account-card:nth-child(1){ animation-delay:0.1s; }
+.account-card:nth-child(2){ animation-delay:0.2s; }
+.account-card:nth-child(3){ animation-delay:0.3s; }
+.account-card:nth-child(4){ animation-delay:0.4s; }
+.account-card:nth-child(5){ animation-delay:0.5s; }
+
+@keyframes slideUp{
+  from{ opacity:0; transform:translateY(40px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.account-card::before{
+  content:"";
+  position:absolute;
+  top:0; left:-100%;
+  width:100%; height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,106,0,0.1),transparent);
+  transition:left 0.6s ease;
+  pointer-events:none;
+}
+
+.account-card:hover::before{ left:100%; }
+
+.account-card:hover{
+  border-color:#ff6a00;
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(255,106,0,0.15);
+}
+
+.account-card.featured{
+  border-color:#ff6a00;
+  box-shadow:0 15px 40px rgba(255,106,0,0.18);
+  background:linear-gradient(135deg,#fff9f7 0%,#f5f0ec 100%);
+}
+
+.icon-box{
+  width:56px; height:56px;
+  background:linear-gradient(135deg,#ff6a00,#ff8533);
+  border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 12px;
+  font-size:28px;
+  transition:all 0.3s ease;
+  box-shadow:0 8px 20px rgba(255,106,0,0.2);
+}
+
+.account-card:hover .icon-box{
+  transform:scale(1.15) rotate(10deg);
+  box-shadow:0 12px 30px rgba(255,106,0,0.3);
+}
+
+.account-card h3{ font-size:20px; margin-bottom:6px; color:#000; }
+
+.account-card .tier-label{
+  font-size:12px;
+  color:#ff6a00;
+  font-weight:700;
+  margin-bottom:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.account-info{
+  margin:12px 0;
+  padding:12px;
+  background:rgba(255,106,0,0.05);
+  border-radius:8px;
+}
+
+.account-info p{ color:#555; font-size:13px; margin-bottom:5px; }
+.account-info p:last-child{ margin-bottom:0; }
+.account-info strong{ color:#ff6a00; }
+
+.features{
+  list-style:none;
+  margin:12px 0;
+  flex:1;
+}
+
+.features li{
+  padding:7px 0;
+  color:#555;
+  font-size:14px;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:all 0.3s ease;
+}
+
+.features li:hover{ color:#ff6a00; transform:translateX(5px); }
+
+.features li::before{
+  content:"✓";
+  color:#ff6a00;
+  font-weight:700;
+  font-size:16px;
+  flex-shrink:0;
+}
+
+.cta-button{
+  width:100%;
+  padding:11px;
+  background:#ff6a00;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:auto;
+  transition:all 0.3s ease;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  font-family:"Segoe UI",sans-serif;
+}
+
+.cta-button:hover{
+  background:#e55a00;
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(255,106,0,0.3);
+}
+
+.featured .cta-button{
+  background:linear-gradient(135deg,#ff6a00,#ff8533);
+}
+
+/* COMPARISON TABLE */
+.comparison-section{
+  background:#f8f6f4;
+  padding:40px 32px;
+  border-radius:16px;
+  margin-bottom:40px;
+  animation:fadeInUp 0.8s ease-out 0.5s backwards;
+}
+
+.comparison-section h3{
+  text-align:center;
+  margin-bottom:28px;
+  font-size:28px;
+  color:#000;
+}
+
+.comparison-table{ width:100%; overflow-x:auto; display:block; }
+
+.comparison-table table{ width:100%; border-collapse:collapse; }
+
+.comparison-table th{
+  background:#fff;
+  padding:16px;
+  text-align:left;
+  font-weight:700;
+  border-bottom:2px solid #ddd;
+  color:#000;
+}
+
+.comparison-table td{
+  padding:14px 16px;
+  border-bottom:1px solid #e5e0db;
+  color:#555;
+}
+
+.comparison-table tr:hover{ background:rgba(255,106,0,0.03); }
+.comparison-table td:first-child{ font-weight:600; color:#000; }
+
+/* CTA SECTION */
+.cta-section{
+  background:linear-gradient(135deg,#ff6a00,#ff8533);
+  padding:50px 40px;
+  border-radius:16px;
+  text-align:center;
+  margin-bottom:40px;
+  color:#fff;
+  animation:fadeInUp 0.8s ease-out 0.6s backwards;
+}
+
+.cta-section h2{ font-size:32px; margin-bottom:16px; }
+.cta-section p{ font-size:18px; margin-bottom:24px; opacity:0.95; }
+
+.cta-section .btn{
+  background:#fff;
+  color:#ff6a00;
+  padding:16px 36px;
+  font-size:18px;
+  border-radius:10px;
+  font-weight:700;
+  display:inline-block;
+  transition:all 0.3s ease;
+}
+
+.cta-section .btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* NOTE SECTIONS BOTTOM */
+.note-section.risk{ border-left:5px solid #000; }
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:48px 0 24px;
+  margin-top:40px;
+  color:#fff;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
+
+footer h4{ margin-bottom:14px; color:#ff6a00; }
+
+footer p, footer a{
+  font-size:14px;
+  color:#fff;
+  display:block;
+  margin-bottom:8px;
+  transition:0.3s;
+}
+
+footer a:hover{ color:#ff6a00; margin-left:5px; }
+
+.footer-bottom{
+  text-align:center;
+  margin-top:36px;
+  font-size:13px;
+  color:#ff6a00;
+}
+
+@media(max-width:768px){
+  .hero h1{ font-size:32px; }
+  .hero h1 span{ font-size:40px; }
+  .features-highlight{ grid-template-columns:1fr 1fr; }
+  .hero-cta-btn{ font-size:15px; padding:14px 28px; }
+}
+
+.custom-icon{ width:60px; height:auto; }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<header>
+  <div class="logo"><img src="images/logo.png" alt="WakandaFX Logo" class="custom-icon" /></div>
+  <nav>
+    <ul class="desktop-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><button class="btn btn-primary">Join Now</button></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <div></div><div></div><div></div>
+    </div>
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><button class="btn btn-primary">Join Now</button></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- Exness logo diagonal radiate: bottom-left to top-right -->
+  <div class="hero-exness-radiate" aria-hidden="true">
+    <img src="images/exness.png" alt="">
+    <img src="images/exness.png" alt="">
+    <img src="images/exness.png" alt="">
+    <img src="images/exness.png" alt="">
+    <img src="images/exness.png" alt="">
+    <img src="images/exness.png" alt="">
+    <img src="images/exness.png" alt="">
+    <img src="images/exness.png" alt="">
+  </div>
+
+  <div class="hero-content">
+    <h1>Professional Forex Trading<span>With Exness</span></h1>
+    <p>A trustworthy and highly regulated forex broker with a diverse portfolio of financial assets and customizable trading platforms tailored to various traders' needs.</p>
+    <a href="https://one.exnessonelink.com/a/p24jq3sv75?source=app" target="_blank" rel="noopener noreferrer" class="hero-cta-btn">
+      Open Your Account Now
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- KEY FEATURES -->
+<section class="features-highlight">
+  <div class="feature-box">
+    <div class="feature-icon">💰</div>
+    <h3>Unlimited Leverage</h3>
+    <p>Up to 1:Unlimited</p>
+  </div>
+  <div class="feature-box">
+    <div class="feature-icon">📊</div>
+    <h3>Flexible Deposits</h3>
+    <p>Multiple payment methods</p>
+  </div>
+  <div class="feature-box">
+    <div class="feature-icon">⚡</div>
+    <h3>Multiple Platforms</h3>
+    <p>MT4, MT5, Exness App</p>
+  </div>
+  <div class="feature-box">
+    <div class="feature-icon">🏆</div>
+    <h3>Highly Regulated</h3>
+    <p>Trust Score 94/99</p>
+  </div>
+</section>
+
+<!-- PLATFORM NOTE -->
+<section class="note-section">
+  <h4>Trading Platforms</h4>
+  <p><strong>MetaTrader 4, MetaTrader 5, and Exness Trade App</strong> available on desktop, web, iOS &amp; Android for seamless trading on any device. Experience advanced charting tools, real-time quotes, and powerful order management across all platforms.</p>
+</section>
+
+<!-- ACCOUNT TYPES -->
+<section class="accounts-section">
+  <div class="section-title">
+    <h2>Choose Your Account Type</h2>
+    <p>Exness offers five account types tailored to your trading experience and goals</p>
+  </div>
+
+  <!-- Row 1: 3 cards -->
+  <div class="accounts-grid">
+
+    <div class="account-card">
+      <div class="icon-box">📈</div>
+      <div class="tier-label">Beginner</div>
+      <h3>Standard Account</h3>
+      <div class="account-info">
+        <p><strong>Minimum Deposit:</strong> $10</p>
+        <p><strong>Commission:</strong> None</p>
+      </div>
+      <ul class="features">
+        <li>Commission-free trading</li>
+        <li>Beginner-friendly</li>
+        <li>Flexible leverage</li>
+        <li>Full market access</li>
+        <li>24/7 support</li>
+      </ul>
+      <a href="https://one.exnessonelink.com/a/p24jq3sv75?source=app" target="_blank">
+        <button class="cta-button">Open Standard Account</button>
+      </a>
+    </div>
+
+    <div class="account-card">
+      <div class="icon-box">🔹</div>
+      <div class="tier-label">Micro Lots</div>
+      <h3>Standard Cent</h3>
+      <div class="account-info">
+        <p><strong>Minimum Deposit:</strong> $10</p>
+        <p><strong>Lot Size:</strong> Cent Lots</p>
+      </div>
+      <ul class="features">
+        <li>Perfect for new traders</li>
+        <li>Micro-lot trading</li>
+        <li>Low risk exposure</li>
+        <li>No commissions</li>
+        <li>Practice trading</li>
+      </ul>
+      <a href="https://one.exnessonelink.com/a/p24jq3sv75?source=app" target="_blank">
+        <button class="cta-button">Open Cent Account</button>
+      </a>
+    </div>
+
+    <div class="account-card featured">
+      <div class="icon-box">⭐</div>
+      <div class="tier-label">Most Popular</div>
+      <h3>Pro Account</h3>
+      <div class="account-info">
+        <p><strong>For:</strong> Experienced traders</p>
+        <p><strong>Features:</strong> Instant execution</p>
+      </div>
+      <ul class="features">
+        <li>Instant execution</li>
+        <li>Low spreads</li>
+        <li>Zero commission</li>
+        <li>Professional tools</li>
+        <li>Priority support</li>
+        <li>Advanced analytics</li>
+      </ul>
+      <a href="https://one.exnessonelink.com/a/p24jq3sv75?source=app" target="_blank">
+        <button class="cta-button">Open Pro Account</button>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Row 2: 2 cards centered -->
+  <div class="accounts-grid-bottom">
+
+    <div class="account-card">
+      <div class="icon-box">💎</div>
+      <div class="tier-label">Professional</div>
+      <h3>Raw Spread Account</h3>
+      <div class="account-info">
+        <p><strong>Spreads From:</strong> 0.0 pips</p>
+        <p><strong>Commission:</strong> Up to $3.50/lot</p>
+      </div>
+      <ul class="features">
+        <li>Raw spreads from 0.0</li>
+        <li>Professional traders</li>
+        <li>Transparent pricing</li>
+        <li>Scalping friendly</li>
+        <li>High frequency trading</li>
+      </ul>
+      <a href="https://one.exnessonelink.com/a/p24jq3sv75?source=app" target="_blank">
+        <button class="cta-button">Open Raw Spread Account</button>
+      </a>
+    </div>
+
+    <div class="account-card">
+      <div class="icon-box">⚡</div>
+      <div class="tier-label">Scalpers</div>
+      <h3>Zero Account</h3>
+      <div class="account-info">
+        <p><strong>Spreads:</strong> Zero on top 30</p>
+        <p><strong>Commission:</strong> From $0.05/lot</p>
+      </div>
+      <ul class="features">
+        <li>Zero spreads on majors</li>
+        <li>Ideal for scalpers</li>
+        <li>High-frequency trading</li>
+        <li>Tight commissions</li>
+        <li>Ultra-fast execution</li>
+      </ul>
+      <a href="https://one.exnessonelink.com/a/p24jq3sv75?source=app" target="_blank">
+        <button class="cta-button">Open Zero Account</button>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison-section">
+  <h3>Account Comparison</h3>
+  <div class="comparison-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th><th>Standard</th><th>Std Cent</th><th>Pro</th><th>Raw Spread</th><th>Zero</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Minimum Deposit</td><td>$10</td><td>$10</td><td>Variable</td><td>Variable</td><td>Variable</td></tr>
+        <tr><td>Spreads From</td><td>Standard</td><td>Standard</td><td>Low</td><td>0.0 pips</td><td>0 pips</td></tr>
+        <tr><td>Commission</td><td>None</td><td>None</td><td>None</td><td>$3.50/lot</td><td>$0.05/lot</td></tr>
+        <tr><td>Leverage</td><td>Up to 1:Unlimited</td><td>Up to 1:Unlimited</td><td>Up to 1:Unlimited</td><td>Up to 1:Unlimited</td><td>Up to 1:Unlimited</td></tr>
+        <tr><td>Execution</td><td>Market</td><td>Market</td><td>Instant</td><td>Instant</td><td>Instant</td></tr>
+        <tr><td>Best For</td><td>Beginners</td><td>New Traders</td><td>Experienced</td><td>Professionals</td><td>Scalpers</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Trade with Exness?</h2>
+  <p>Join thousands of traders worldwide. Open an account today and access global forex markets with flexible leverage, low costs, and professional-grade trading tools.</p>
+  <a href="https://one.exnessonelink.com/a/p24jq3sv75?source=app" target="_blank" class="btn">Open Your Account Now</a>
+</section>
+
+<!-- NOTES -->
+<section class="note-section">
+  <h4>Why Choose Exness?</h4>
+  <p><strong>Trustworthy &amp; Highly Regulated:</strong> Exness stands out as a trustworthy and highly regulated forex broker with an impressive trust score of 94 out of 99. We offer a diverse portfolio of financial assets including forex, commodities, indices, and cryptocurrencies. With customizable trading platforms (MetaTrader 4, MetaTrader 5, and our proprietary Exness Trade App), unlimited leverage options, and flexible deposit requirements starting from just $10, Exness caters to traders of all experience levels.</p>
+</section>
+
+<section class="note-section risk">
+  <h4>Risk Warning</h4>
+  <p>Trading forex, CFDs, and cryptocurrencies involves significant risk of loss. These products may not be suitable for all investors. You should not risk more than you can afford to lose. Before trading, ensure you fully understand the risks involved. Past performance is not indicative of future results. This is not financial advice. Exness is regulated and operates under strict compliance guidelines to protect trader interests.</p>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>Social Media</h4>
+      <a href="#">Telegram</a>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="results.html">Results</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <div>
+      <h4>Contacts</h4>
+      <p>Email: keniziodenis50@gmail.com</p>
+      <p>WhatsApp: +255 741 642 682</p>
+      <p>Tanzania</p>
+    </div>
+    <div>
+      <h4>Risk Disclosure</h4>
+      <p>Trading forex involves significant risk. This is not financial advice. Trade only with capital you can afford to lose. Educate yourself first.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 WakandaFX. All Rights Reserved.</div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', function() {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('show');
+});
+
+document.querySelectorAll('.mobile-menu a, .mobile-menu button').forEach(item => {
+  item.addEventListener('click', function() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('show');
+  });
+});
+
+document.querySelectorAll('.cta-button').forEach(button => {
+  button.addEventListener('click', function(e) {
+    const href = this.parentElement.href;
+    if (href) {
+      e.preventDefault();
+      this.style.opacity = '0.7';
+      this.style.pointerEvents = 'none';
+      window.open(href, '_blank', 'noopener,noreferrer');
+      setTimeout(() => {
+        this.style.opacity = '1';
+        this.style.pointerEvents = 'auto';
+      }, 500);
+    }
+  });
+});
+
+console.log("Exness - Professional Forex Trading with Unlimited Leverage");
+</script>
+
+</body>
+</html>

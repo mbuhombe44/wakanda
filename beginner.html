@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Trading Guide for Beginners | Learn Currency Trading</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Sora",sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#000;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:#000;
+}
+
+.container{
+  width:85%;
+  margin:auto;
+}
+
+/* NAVBAR */
+header{
+  padding:20px 10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:10px;
+  background:#fff;
+  z-index:999;
+  box-shadow:0 2px 6px rgba(249, 246, 246, 0.1);
+  border-radius:15px;
+  margin:10px;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav li a{
+  font-weight:600;
+  transition:0.3s;
+}
+
+nav li a:hover{
+  color:#ff6a00;
+}
+
+.btn{
+  padding:10px 22px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+  border:none;
+}
+
+.btn:hover{
+  opacity:0.85;
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:#ff6a00;
+  color:#fff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+nav ul.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+nav ul.mobile-menu.show { display: flex; }
+.hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active div:nth-child(2) { opacity: 0; }
+.hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+@media(max-width:768px){
+  nav ul.desktop-menu { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ============================================================
+   VIDEO INTRO SECTION — The star of the show
+   ============================================================ */
+.video-intro-section {
+  position: relative;
+  margin-bottom: 0;
+  overflow: hidden;
+  background: #fffaf7;
+  border-radius: 24px 24px 25px 25px;
+  margin-top: 20px;
+  border: 1px solid rgba(255,106,0,0.08);
+}
+
+/* Decorative faded orange circles */
+.video-intro-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255,106,0,0.10) 0%, rgba(255,106,0,0.04) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  animation: blobDrift1 9s ease-in-out infinite alternate;
+}
+.video-intro-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255,159,67,0.10) 0%, rgba(255,106,0,0.04) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  animation: blobDrift2 11s ease-in-out infinite alternate;
+}
+
+@keyframes blobDrift1 {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.1); }
+}
+@keyframes blobDrift2 {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(-30px, -20px) scale(1.08); }
+}
+
+/* Subtle dot grid texture */
+.video-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,106,0,0.12) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NEW: section-level title sitting above the grid ── */
+.video-section-heading {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 52px 40px 0;
+}
+.video-section-heading h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+.video-section-heading h1 em {
+  color: #ff6a00;
+  font-style: italic;
+}
+.video-section-heading-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,106,0,0.08);
+  border: 1px solid rgba(255,106,0,0.25);
+  color: #d45a00;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+.video-section-heading-sub .dot {
+  width: 7px; height: 7px;
+  background: #ff6a00;
+  border-radius: 50%;
+  animation: blink 1.2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100% { opacity:1; }
+  50%      { opacity:0.2; }
+}
+.video-heading-divider {
+  width: 64px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6a00, #ff9f43);
+  border-radius: 2px;
+  margin: 18px auto 0;
+}
+
+@media(max-width:768px){
+  .video-section-heading { padding: 36px 20px 0; }
+  .video-section-heading h1 { font-size: 34px; }
+}
+
+.video-intro-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 0;
+  align-items: center;
+  min-height: 520px;
+  padding: 60px 50px;
+}
+
+/* LEFT — copy */
+.video-copy {
+  padding-right: 50px;
+  animation: fadeSlideLeft 0.9s ease-out 0.2s backwards;
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity:0; transform: translateX(-30px); }
+  to   { opacity:1; transform: translateX(0); }
+}
+
+.video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,106,0,0.08);
+  border: 1px solid rgba(255,106,0,0.25);
+  color: #d45a00;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+.video-badge .dot {
+  width: 7px; height: 7px;
+  background: #ff6a00;
+  border-radius: 50%;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+.video-copy h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  line-height: 1.15;
+  color: #111;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.video-copy h2 em {
+  color: #ff6a00;
+  font-style: italic;
+}
+
+.video-copy p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 420px;
+}
+
+/* Trust badges row */
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.trust-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1px solid rgba(255,106,0,0.2);
+  border-radius: 100px;
+  padding: 7px 16px;
+  font-size: 13px;
+  color: #444;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(255,106,0,0.06);
+}
+.trust-pill:hover {
+  background: rgba(255,106,0,0.06);
+  border-color: rgba(255,106,0,0.4);
+  color: #ff6a00;
+}
+.trust-pill span {
+  font-size: 16px;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #aaa;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.scroll-hint-line {
+  height: 1px;
+  width: 40px;
+  background: rgba(0,0,0,0.12);
+}
+
+/* RIGHT — video player */
+.video-player-wrap {
+  position: relative;
+  animation: fadeSlideRight 0.9s ease-out 0.35s backwards;
+}
+
+@keyframes fadeSlideRight {
+  from { opacity:0; transform: translateX(30px); }
+  to   { opacity:1; transform: translateX(0); }
+}
+
+/* Decorative corner accents */
+.video-player-wrap::before,
+.video-player-wrap::after {
+  content: '';
+  position: absolute;
+  width: 28px; height: 28px;
+  border-color: #ff6a00;
+  border-style: solid;
+  z-index: 3;
+  transition: all 0.5s ease;
+}
+.video-player-wrap::before {
+  top: -10px; left: -10px;
+  border-width: 3px 0 0 3px;
+  border-radius: 3px 0 0 0;
+}
+.video-player-wrap::after {
+  bottom: -10px; right: -10px;
+  border-width: 0 3px 3px 0;
+  border-radius: 0 0 3px 0;
+}
+.video-player-wrap:hover::before { width: 40px; height: 40px; }
+.video-player-wrap:hover::after  { width: 40px; height: 40px; }
+
+.video-corner-tr {
+  position: absolute;
+  top: -10px; right: -10px;
+  width: 28px; height: 28px;
+  border-top: 3px solid #ff6a00;
+  border-right: 3px solid #ff6a00;
+  border-radius: 0 3px 0 0;
+  z-index: 3;
+  transition: all 0.5s ease;
+}
+.video-corner-bl {
+  position: absolute;
+  bottom: -10px; left: -10px;
+  width: 28px; height: 28px;
+  border-bottom: 3px solid #ff6a00;
+  border-left: 3px solid #ff6a00;
+  border-radius: 0 0 0 3px;
+  z-index: 3;
+  transition: all 0.5s ease;
+}
+.video-player-wrap:hover .video-corner-tr,
+.video-player-wrap:hover .video-corner-bl { width: 40px; height: 40px; }
+
+/* Glow ring around video */
+.video-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,106,0,0.25), rgba(255,159,67,0.15), transparent, rgba(255,106,0,0.15));
+  z-index: 0;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.video-player-wrap:hover .video-glow { opacity: 1; }
+
+.video-box {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(255,106,0,0.15), 0 8px 24px rgba(0,0,0,0.1);
+  z-index: 1;
+  border: 1px solid rgba(255,106,0,0.15);
+}
+.video-box iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* View count tag */
+.video-meta-tag {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff6a00, #ff9f43);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 6px 20px;
+  border-radius: 100px;
+  white-space: nowrap;
+  z-index: 4;
+  box-shadow: 0 4px 16px rgba(255,106,0,0.4);
+}
+
+/* Bottom stats bar */
+.video-stats-bar {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,106,0,0.04);
+  border-top: 1px solid rgba(255,106,0,0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 22px 50px;
+  gap: 20px;
+}
+.video-stat {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+.video-stat strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ff6a00;
+  margin-bottom: 4px;
+}
+.video-stat-divider {
+  width: 1px;
+  background: rgba(255,106,0,0.12);
+  align-self: stretch;
+}
+
+/* ============================================================
+   CURVED CONNECTOR between video section and hero
+   ============================================================ */
+.section-connector {
+  background: #080c10;
+  height: 48px;
+  position: relative;
+  z-index: 2;
+}
+.section-connector svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* HERO SECTION */
+.hero{
+  padding:60px 20px;
+  text-align:center;
+  background: linear-gradient(135deg, #ffffff 0%, #fff9f7 50%, #f5f0ec 100%);
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom: 60px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  animation: fadeInDown 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-watermark{
+  position:absolute;
+  width:160px;
+  opacity:0.08;
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+  filter:grayscale(100%);
+}
+.hero-watermark:nth-child(1){top:8%;left:5%;transform:rotate(-10deg);}
+.hero-watermark:nth-child(2){top:25%;left:28%;transform:rotate(-8deg);}
+.hero-watermark:nth-child(3){top:45%;left:52%;transform:rotate(-10deg);}
+.hero-watermark:nth-child(4){top:62%;left:75%;transform:rotate(-8deg);}
+
+.hero > *:not(.hero-watermark){
+  position:relative;
+  z-index:1;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:20px;
+  color:#000;
+  line-height:1.3;
+}
+.hero h1 span{
+  color:#ff6a00;
+  display:block;
+  font-size:56px;
+  font-weight:700;
+  margin:10px 0;
+}
+.hero p{
+  font-size:18px;
+  color:#555;
+  max-width:700px;
+  margin:0 auto 30px;
+  line-height:1.7;
+}
+
+/* INTRO SECTION */
+.intro-section{
+  background:linear-gradient(135deg, #fff9f7, #f5f0ec);
+  padding:40px;
+  border-radius:16px;
+  margin-top: 40px;
+  margin-bottom:40px;
+  border-left:5px solid #ff6a00;
+  animation:fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.intro-section h2{
+  color:#ff6a00;
+  margin-bottom:15px;
+  font-size:28px;
+}
+.intro-section p{
+  color:#555;
+  line-height:1.8;
+  font-size:16px;
+  margin-bottom:12px;
+}
+
+/* ACCORDION */
+.accordion-container{ margin-bottom:60px; }
+
+.accordion-item{
+  background:#fff;
+  border:2px solid #f0f0f0;
+  border-radius:12px;
+  margin-bottom:20px;
+  overflow:hidden;
+  transition:all 0.3s ease;
+  animation:slideUp 0.6s ease-out backwards;
+}
+.accordion-item:nth-child(1){animation-delay:0.1s;}
+.accordion-item:nth-child(2){animation-delay:0.2s;}
+.accordion-item:nth-child(3){animation-delay:0.3s;}
+.accordion-item:nth-child(4){animation-delay:0.4s;}
+.accordion-item:nth-child(5){animation-delay:0.5s;}
+.accordion-item:nth-child(6){animation-delay:0.6s;}
+.accordion-item:nth-child(7){animation-delay:0.7s;}
+
+@keyframes slideUp {
+  from { opacity:0; transform:translateY(30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.accordion-item:hover{
+  border-color:#ff6a00;
+  box-shadow:0 8px 20px rgba(255,106,0,0.1);
+}
+
+.accordion-header{
+  padding:20px;
+  background:linear-gradient(135deg, #fff9f7, #f5f0ec);
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:all 0.3s ease;
+}
+.accordion-header:hover{
+  background:linear-gradient(135deg, #f5f0ec, #fff9f7);
+}
+.accordion-header h3{
+  color:#ff6a00;
+  font-size:20px;
+  flex:1;
+}
+.accordion-toggle{
+  width:30px; height:30px;
+  background:#ff6a00;
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  font-size:18px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.3s ease;
+  flex-shrink:0;
+}
+.accordion-toggle:hover{
+  transform:scale(1.1);
+  box-shadow:0 4px 12px rgba(255,106,0,0.3);
+}
+.accordion-toggle.open{ transform:rotate(180deg); }
+
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.3s ease;
+  background:#fff;
+}
+.accordion-content.show{ max-height:2000px; }
+
+.accordion-body{
+  padding:30px 20px;
+  color:#555;
+  line-height:1.8;
+  font-size:15px;
+}
+.accordion-body h4{
+  color:#000;
+  margin-top:15px;
+  margin-bottom:10px;
+  font-size:16px;
+  font-weight:700;
+}
+.accordion-body p{ margin-bottom:12px; }
+.accordion-body ul{
+  list-style:none;
+  margin-left:0;
+  margin-bottom:15px;
+}
+.accordion-body li{
+  padding:8px 0 8px 25px;
+  position:relative;
+  margin-bottom:8px;
+}
+.accordion-body li::before{
+  content:"→";
+  color:#ff6a00;
+  position:absolute;
+  left:0;
+  font-weight:700;
+}
+.accordion-body strong{ color:#ff6a00; }
+
+.read-more-btn{
+  display:inline-block;
+  background:#ff6a00;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:6px;
+  font-weight:600;
+  transition:all 0.3s ease;
+  border:none;
+  cursor:pointer;
+  margin-top:15px;
+}
+.read-more-btn:hover{
+  background:#e55a00;
+  transform:translateY(-2px);
+  box-shadow:0 6px 15px rgba(255,106,0,0.3);
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+.section-title h2{
+  font-size:42px;
+  margin-bottom:15px;
+  color:#000;
+}
+.section-title p{
+  font-size:18px;
+  color:#666;
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* CTA SECTION */
+.cta-section{
+  background:linear-gradient(135deg, #ff6a00, #ff8533);
+  padding:60px 40px;
+  border-radius:16px;
+  text-align:center;
+  margin-bottom:60px;
+  color:#fff;
+  animation:fadeInUp 0.8s ease-out 0.8s backwards;
+}
+.cta-section h2{ font-size:36px; margin-bottom:20px; }
+.cta-section p{ font-size:18px; margin-bottom:30px; opacity:0.95; }
+.cta-section .btn{
+  background:#fff;
+  color:#ff6a00;
+  padding:18px 40px;
+  font-size:18px;
+  border-radius:10px;
+  font-weight:700;
+  display:inline-block;
+  transition:all 0.3s ease;
+}
+.cta-section .btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:60px 0 30px;
+  margin-top:60px;
+  color:#fff;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
+footer h4{
+  margin-bottom:15px;
+  color:#ff6a00;
+}
+footer p, footer a{
+  font-size:14px;
+  color:#fff;
+  display:block;
+  margin-bottom:8px;
+  transition:0.3s;
+}
+footer a:hover{
+  color:#ff6a00;
+  margin-left:5px;
+}
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  font-size:13px;
+  color:#ff6a00;
+}
+
+@media(max-width:900px){
+  .video-intro-inner{
+    grid-template-columns: 1fr;
+    padding: 40px 30px 50px;
+    text-align: center;
+  }
+  .video-copy { padding-right: 0; margin-bottom: 40px; }
+  .video-copy p { margin: 0 auto 30px; }
+  .trust-row { justify-content: center; }
+  .scroll-hint { justify-content: center; }
+  .video-stats-bar { padding: 20px 20px; gap: 10px; }
+}
+
+@media(max-width:768px){
+  .hero h1 { font-size:32px; }
+  .hero h1 span { font-size:40px; }
+  .section-title h2 { font-size:32px; }
+  .accordion-header { flex-direction:column; align-items:flex-start; gap:10px; }
+  .accordion-toggle { margin-top:10px; }
+  .video-copy h2 { font-size: 30px; }
+  .video-stats-bar { flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .video-stat-divider { display: none; }
+}
+
+.custom-icon {
+  width: 60px;
+  height: auto;
+}
+
+/* YouTube Thumbnail Player */
+.yt-player {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  background: #000;
+  text-decoration: none;
+}
+.yt-thumb {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 15px;
+}
+.yt-player:hover .yt-thumb {
+  transform: scale(1.04);
+  filter: brightness(0.72);
+}
+.yt-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  z-index: 3;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5));
+  pointer-events: none;
+}
+.yt-play-btn img {
+  width: 90px;
+  height: auto;
+  display: block;
+}
+.yt-player:hover .yt-play-btn {
+  transform: translate(-50%, -50%) scale(1.13);
+  filter: drop-shadow(0 10px 28px rgba(255,0,0,0.55));
+}
+.yt-label {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  background: rgba(0,0,0,0.72);
+  color: #fff;
+  font-size: 12px; font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 6px;
+  display: flex; align-items: center; gap: 6px;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+  pointer-events: none;
+  letter-spacing: 0.3px;
+}
+.yt-label-dot {
+  width: 8px; height: 8px;
+  background: #ff4444;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<header>
+  <img src="images/logo.png" alt="WakandaFX Logo" class="custom-icon" />
+  <nav>
+    <ul class="desktop-menu">
+      <li><a href="index.html" class="btn btn-primary">← Back Home</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <div></div><div></div><div></div>
+    </div>
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="index.html" class="btn btn-primary">← Back Home</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============================================================
+     VIDEO INTRO SECTION — Above the hero
+     ============================================================ -->
+<section class="video-intro-section">
+  <div class="video-grid-overlay"></div>
+  <!-- Extra decorative circles -->
+  <div style="position:absolute;top:10%;right:8%;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,0,0.07) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
+  <div style="position:absolute;top:55%;left:4%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,159,67,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
+  <div style="position:absolute;bottom:15%;right:30%;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,0,0.06) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
+
+  <!-- ── SECTION TITLE (new, centered, inside the card) ── -->
+  <div class="video-section-heading">
+    <div class="video-section-heading-sub">
+      <span class="dot"></span>
+      Start Here
+    </div>
+    <h1>Beginner's <em>Foundation</em></h1>
+    <div class="video-heading-divider"></div>
+  </div>
+
+  <div class="video-intro-inner">
+
+    <!-- LEFT COPY -->
+    <div class="video-copy">
+      <div class="video-badge">
+        <span class="dot"></span>
+        Free Intro Lesson
+      </div>
+
+      <h2>
+        One Video That Could<br>
+        <em>Change Everything</em><br>
+        About How You Trade
+      </h2>
+
+      <p>
+        Most beginners spend months getting things wrong before they understand the basics.
+        This free intro video compresses what truly matters into a clear, structured lesson.  
+        so you can start smarter, not harder.
+      </p>
+
+      <div class="trust-row">
+        <div class="trust-pill"><span>📌</span> Step-by-step breakdown</div>
+        <div class="trust-pill"><span>⚡</span> No finance jargon</div>
+        <div class="trust-pill"><span>🔐</span> Free to watch</div>
+        <div class="trust-pill"><span>🤳🖥</span> Watch anywhere</div>
+      </div>
+
+      <div class="scroll-hint">
+        <div class="scroll-hint-line"></div>
+        Watch the full video
+        <div class="scroll-hint-line"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT VIDEO -->
+    <div class="video-player-wrap">
+      <div class="video-glow"></div>
+      <div class="video-corner-tr"></div>
+      <div class="video-corner-bl"></div>
+      <div class="video-box">
+        <a class="yt-player"
+           href="https://youtu.be/0GQit3E9bgo"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Watch WakandaFX intro video on YouTube">
+          <img
+            class="yt-thumb"
+            src="https://img.youtube.com/vi/0GQit3E9bgo/maxresdefault.jpg"
+            onerror="this.src='https://img.youtube.com/vi/0GQit3E9bgo/hqdefault.jpg'"
+            alt="WakandaFX Forex Tutorial"
+            loading="lazy"
+          >
+          <div class="yt-play-btn">
+            <img src="data:image/png;base64,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" alt="Play on YouTube">
+          </div>
+          <div class="yt-label">
+            <span class="yt-label-dot"></span> Watch on YouTube
+          </div>
+        </a>
+      </div>
+      <div class="video-meta-tag">🎬 Intro to Forex — Watch This First</div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM STATS BAR -->
+  <div class="video-stats-bar">
+    <div class="video-stat">
+      <strong>12 min</strong>
+      Watch time
+    </div>
+    <div class="video-stat-divider"></div>
+    <div class="video-stat">
+      <strong>100%</strong>
+      Free content
+    </div>
+    <div class="video-stat-divider"></div>
+    <div class="video-stat">
+      <strong>350+</strong>
+      Students trained
+    </div>
+    <div class="video-stat-divider"></div>
+    <div class="video-stat">
+      <strong>5★</strong>
+      Rated by members
+    </div>
+    <div class="video-stat-divider"></div>
+    <div class="video-stat">
+      <strong>0 TZS</strong>
+      Cost to start learning
+    </div>
+  </div>
+</section>
+
+
+
+<!-- INTRO SECTION -->
+<section class="intro-section">
+  <h2>Welcome to Forex Trading</h2>
+  <p>Have you ever wondered what it means to trade currencies? <br> That's essentially what Forex trading is — buying and selling currencies with the goal of profiting from changes in their value. <br><br>The best part? <br> You don't need to be a seasoned financial expert to get started.</p>
+  <p>If you've ever exchanged money while traveling abroad, you've already participated in a simple form of currency trading. In this guide, we'll strip away the complexity and walk you through the basics of Forex trading, explaining how the market works, key strategies, and how to take your first steps.</p>
+</section>
+
+<!-- ACCORDION SECTIONS -->
+<div class="accordion-container" id="guide">
+  <div class="section-title">
+    <h2>Forex Trading Guide</h2>
+    <p>Click on each section to expand and learn more</p>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(0)">
+      <h3>Can I Trade Forex From Anywhere?</h3>
+      <button class="accordion-toggle" aria-label="Toggle section"></button>
+    </div>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        <p><strong>Yes, Forex is accessible from almost anywhere with an internet connection.</strong> You can trade on desktop or mobile platforms, making it convenient no matter where you are.</p>
+        <p>The Forex market operates 24 hours a day, 5 days a week, which means there's always a trading opportunity available during business hours in different time zones around the world. Whether you're in New York, London, Tokyo, or anywhere else, you can access the market when it's convenient for you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(1)">
+      <h3>What is Forex Trading?</h3>
+      <button class="accordion-toggle" aria-label="Toggle section"></button>
+    </div>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        <p><strong>Forex (short for foreign exchange) trading is where you trade one currency for another.</strong> It always happens in pairs like EUR/USD, where you trade euros for U.S. dollars. The idea? You're hoping the value of one currency will rise (or fall) compared to the other.</p>
+        <p>Since currencies are moving all day long, you've got plenty of chances to jump in! Forex is a bit different from stock markets. It runs 24/5 — yes, around the clock, but it sleeps on weekends — so no matter what time zone you're in, you can trade when it's convenient for you.</p>
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Currencies traded in pairs (e.g., EUR/USD, GBP/JPY)</li>
+          <li>24/5 market availability</li>
+          <li>High liquidity and constant price movement</li>
+          <li>Accessible from anywhere with internet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(2)">
+      <h3>How Does Forex Trading Work?</h3>
+      <button class="accordion-toggle" aria-label="Toggle section"></button>
+    </div>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        <p><strong>Think of Forex trading as guessing which currency will win a tug-of-war.</strong> If you think the euro will strengthen against the dollar, you buy the EUR/USD pair. If you think it's going to fall, you sell.</p>
+        <h4>Quick Example:</h4>
+        <ul>
+          <li><strong>Bullish Scenario:</strong> You think the euro is going to do better than the U.S. dollar? You'd go ahead and buy EUR/USD.</li>
+          <li><strong>Bearish Scenario:</strong> If you think the dollar's got the upper hand, then you'd sell that same pair.</li>
+        </ul>
+        <p>It's that simple at the core, but of course, it gets deeper the more you dig in. The key is understanding how to read market signals and manage your risk properly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(3)">
+      <h3>Why Trade Forex?</h3>
+      <button class="accordion-toggle" aria-label="Toggle section"></button>
+    </div>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        <p>There are plenty of reasons people jump into Forex trading. Here are some of the biggest draws:</p>
+        <h4>1. Always Open</h4>
+        <p>The Forex market is always open during the weekdays. So, whether you're a night owl or an early bird, you can trade at the time that suits you best.</p>
+        <h4>2. Easy to Get Started</h4>
+        <p>You don't need a ton of money to start trading Forex. Some brokers let you dip your toes in with small amounts, and most offer demo accounts to practice without risking any cash.</p>
+        <h4>3. Lots of Liquidity</h4>
+        <p>Forex is huge, and there's always someone ready to take the other side of your trade. This means you can jump in and out of trades fast.</p>
+        <h4>4. Leverage</h4>
+        <p>With Forex, you can control bigger trades than your actual deposit — thanks to something called leverage. But a heads-up: while leverage can boost your profits, it can also lead to bigger losses if things don't go your way.</p>
+        <h4>5. Plenty of Action</h4>
+        <p>Currencies are always moving. Whether it's news from central banks, elections, or trade deals, there's always something shaking up the market — creating opportunities for you to trade.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item" id="terms">
+    <div class="accordion-header" onclick="toggleAccordion(4)">
+      <h3>Key Forex Trading Terms</h3>
+      <button class="accordion-toggle" aria-label="Toggle section"></button>
+    </div>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        <p>Before diving into the market, it helps to know some basic terms that you'll come across:</p>
+        <h4>PIPS</h4>
+        <p>These are the tiny movements in a currency pair's price, usually the fourth decimal place (for example, 0.0001).</p>
+        <h4>SPREAD</h4>
+        <p>This is the difference between the buy price (bid) and the sell price (ask). Think of it as a small cost for placing a trade.</p>
+        <h4>LEVERAGE</h4>
+        <p>The ability to control a large position with a smaller amount of money. But watch out — leverage can be a double-edged sword!</p>
+        <h4>MARGIN</h4>
+        <p>This is the amount of money you need to put down to open a leveraged trade.</p>
+        <h4>STOP LOSS ORDER</h4>
+        <p>A tool to automatically close a trade if it moves against you beyond a certain point.</p>
+        <h4>TAKE PROFIT ORDER</h4>
+        <p>The reverse of stop-loss — automatically closes a trade when your profit hits a target.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(5)">
+      <h3>Advanced Forex Terms You Must Know</h3>
+      <button class="accordion-toggle" aria-label="Toggle section"></button>
+    </div>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        <p>To get started in the world of Forex trading it's important to get a grasp of the basics first. Here are 12 important Forex terms that any trader needs to know:</p>
+        <h4>1. Currency Pair</h4>
+        <p>In Forex, currencies are always traded in pairs, such as EUR/USD (Euro/US Dollar) or GBP/JPY (British Pound/Japanese Yen). The first currency in the pair is the base currency, and the second is the quote currency.</p>
+        <h4>2. Bid and Ask Price</h4>
+        <ul>
+          <li><strong>Bid Price:</strong> The price at which the market or your broker is willing to buy the base currency</li>
+          <li><strong>Ask Price:</strong> The price at which the market or broker is willing to sell the base currency</li>
+        </ul>
+        <p>The difference between the bid and ask price is called the spread. For example, if the bid price for EUR/USD is 1.1750 and the ask price is 1.1753, the spread is 0.0003 (3 pips).</p>
+        <h4>3. Pips</h4>
+        <p>A pip (percentage in point) is the smallest price move that a given exchange rate can make based on market convention. In most currency pairs, a pip equals a movement in the fourth decimal place. For Japanese yen pairs (like USD/JPY), a pip is represented by the second decimal place.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item" id="getstarted">
+    <div class="accordion-header" onclick="toggleAccordion(6)">
+      <h3>How to Get Started with Forex Trading</h3>
+      <button class="accordion-toggle" aria-label="Toggle section"></button>
+    </div>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        <p>Ready to start? Here's a quick step-by-step guide to help you dive in:</p>
+        <h4>1. Learn the Basics</h4>
+        <p>Take the time to understand the market, a repeatable trading strategy, and risk management. Mentorship programs can help deepen your knowledge.</p>
+        <h4>2. Create a Trading Plan</h4>
+        <p>This is your game plan — what strategies you'll use, how much you're willing to risk, and what your goals are. Stick to it!</p>
+        <h4>3. Backtest a Strategy</h4>
+        <p>You need to get data on the strategy that you learned to prove to yourself that it works and that you can operate properly.</p>
+        <h4>4. Find a Broker</h4>
+        <p>Selecting the right Forex broker is crucial for success. Look for one that's regulated and offers competitive spreads, as well as platforms like MetaTrader 4 or 5.</p>
+        <h4>5. Start Small</h4>
+        <p>Once you feel confident, start with a small amount of real money. As you gain experience, you can scale up your trades.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <h2>Ready to Begin Your Trading Journey?</h2>
+  <p>
+    Now that you understand the basics of Forex trading, it's time to take the next step. Open a demo account to practice, develop your strategy, and gain confidence before trading with real money.
+  </p>
+  <a href="pricing.html" class="btn">
+    Start with WakandaFX
+  </a>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#guide">Guide</a>
+      <a href="#terms">Terms</a>
+      <a href="#getstarted">Get Started</a>
+    </div>
+    <div>
+      <h4>Learning Resources</h4>
+      <p>Free Educational Content</p>
+      <p>Trading Strategies</p>
+      <p>Risk Management Tips</p>
+    </div>
+    <div>
+      <h4>Trading Platforms</h4>
+      <p>MetaTrader 4</p>
+      <p>MetaTrader 5</p>
+      <p>Web Platforms</p>
+    </div>
+    <div>
+      <h4>Risk Warning</h4>
+      <p>Trading involves high risk. Only trade with capital you can afford to lose. Past performance is not indicative of future results. This is not financial advice.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 WakandaFX. All Rights Reserved. Trade Responsibly.
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', function() {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('show');
+});
+
+document.querySelectorAll('.mobile-menu a, .mobile-menu button').forEach(item => {
+  item.addEventListener('click', function() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('show');
+  });
+});
+
+function toggleAccordion(index) {
+  const items = document.querySelectorAll('.accordion-item');
+  const item = items[index];
+  const content = item.querySelector('.accordion-content');
+  const toggle = item.querySelector('.accordion-toggle');
+  const isOpen = content.classList.contains('show');
+  document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('.accordion-toggle').forEach(el => el.classList.remove('open'));
+  if (!isOpen) {
+    content.classList.add('show');
+    toggle.classList.add('open');
+  }
+}
+</script>
+
+</body>
+</html>

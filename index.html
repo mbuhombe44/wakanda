@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://bolt.new/static/og_default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+<title>WakandaFX | Professional Forex Trading & Education</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+/* ============ GLOBAL STYLES ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#ff6a00;--secondary:#0b0b0b;--light:#f8f8f8;--border:#ececec}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Roboto,sans-serif;background:#fff;color:#000;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes scrollPayments{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes popIn{from{opacity:0;transform:scale(0.9) translateY(-20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes floatUp{0%{transform:translateY(0);opacity:0}50%{opacity:1}100%{transform:translateY(-30px);opacity:0}}
+
+/* ============ HEADER ============ */
+header{position:sticky;top:10px;margin:10px;padding:20px 25px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-radius:15px;box-shadow:0 2px 10px rgba(0,0,0,0.05);z-index:999;animation:fadeInDown 0.6s ease-out}
+.logo{font-size:24px;font-weight:800;color:#000;display:flex;align-items:center;gap:8px}
+.logo i{color:var(--primary);font-size:28px}
+nav ul{list-style:none;display:flex;gap:30px}
+nav li a{font-weight:600;transition:all 0.3s;position:relative}
+nav li a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--primary);transition:width 0.3s}
+nav li a:hover::after{width:100%}
+.btn{padding:10px 22px;border-radius:8px;border:none;cursor:pointer;font-weight:600;transition:all 0.3s;display:inline-flex;align-items:center;gap:6px;font-size:14px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
+.btn-primary{background:linear-gradient(135deg,var(--primary),#ff9f43);color:#fff}
+.btn-primary:hover{background:linear-gradient(135deg,#d67342,var(--primary))}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1000}
+.hamburger div{width:25px;height:3px;background:#000;border-radius:2px;transition:all 0.4s ease}
+.hamburger.active div:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active div:nth-child(2){opacity:0}
+.hamburger.active div:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+.mobile-menu{display:none;flex-direction:column;gap:15px;position:absolute;top:70px;right:20px;background:#fff;padding:20px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.15);animation:slideInRight 0.3s ease-out}
+.mobile-menu.show{display:flex}
+@media(max-width:768px){nav ul.desktop-menu{display:none}.hamburger{display:flex}}
+
+/* ============ HERO ============ */
+.hero{padding:80px 20px;margin-bottom:30px;border-radius:24px;background:linear-gradient(135deg,#fff 0%,#f8f5f2 50%,#fff9f7 100%);box-shadow:0 8px 32px rgba(0,0,0,0.08);animation:slideUp 0.8s ease-out;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:url('images/watermark.jpg') center center / cover no-repeat;opacity:0.18;pointer-events:none;z-index:0;border-radius:24px;filter:grayscale(30%);}
+.hero-watermark{position:absolute;width:160px;opacity:0.08;pointer-events:none;user-select:none;z-index:1;filter:grayscale(100%);}
+.hero-watermark:nth-child(1){top:8%;left:5%;transform:rotate(-10deg);}
+.hero-watermark:nth-child(2){top:25%;left:28%;transform:rotate(-8deg);}
+.hero-watermark:nth-child(3){top:45%;left:52%;transform:rotate(-10deg);}
+.hero-watermark:nth-child(4){top:62%;left:75%;transform:rotate(-8deg);}
+.hero-container{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center;max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.hero-left{animation:slideInLeft 0.8s ease-out 0.2s backwards}
+.hero-left h1{font-size:48px;line-height:1.2;margin-bottom:20px;color:#000;font-weight:800;letter-spacing:-1px}
+.hero-left h1 span{color:var(--primary);display:block;font-size:56px;margin-top:10px}
+.hero-left p{font-size:18px;color:#555;line-height:1.8;margin-bottom:30px}
+.hero-right{animation:slideInRight 0.8s ease-out 0.2s backwards}
+.beginner-card{background:linear-gradient(135deg,#fff 0%,#f8f6f4 100%);padding:40px;border-radius:18px;border:2px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.4s;position:relative;overflow:hidden}
+.beginner-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--primary),#ff9f43);border-radius:18px 18px 0 0}
+.beginner-card:hover{transform:translateY(-10px);box-shadow:0 20px 45px rgba(0,0,0,0.12);border-color:var(--primary)}
+.beginner-card h3{font-size:24px;margin-bottom:16px;color:#000;display:flex;align-items:center;gap:10px}
+.beginner-card h3 i{color:var(--primary);font-size:28px}
+.beginner-card p{font-size:16px;color:#555;line-height:1.8;margin-bottom:24px}
+@media(max-width:768px){.hero-container{grid-template-columns:1fr}.hero-left h1{font-size:32px}.hero-left h1 span{font-size:40px}.beginner-card{padding:25px}}
+
+/* ============ SECTION ============ */
+.section{padding:50px 20px;border-bottom:1px solid var(--border)}
+.section-title{text-align:center;margin-bottom:35px;animation:fadeInDown 0.8s ease-out}
+.section-title h2{font-size:42px;margin-bottom:16px;color:#000;font-weight:800;letter-spacing:-1px}
+.section-title p{font-size:18px;color:#555;max-width:600px;margin:0 auto;line-height:1.7}
+
+/* ============ CARD GRID ============ */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:40px}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:40px 30px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.4s;position:relative;overflow:hidden;animation:slideUp 0.6s ease-out backwards}
+.card:nth-child(1){animation-delay:0.1s}
+.card:nth-child(2){animation-delay:0.2s}
+.card:nth-child(3){animation-delay:0.3s}
+.card:nth-child(4){animation-delay:0.4s}
+.card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,106,0,0.1),transparent);transition:left 0.6s ease;pointer-events:none}
+.card:hover::before{left:100%}
+.card:hover{transform:translateY(-12px);box-shadow:0 20px 45px rgba(0,0,0,0.12);border-color:var(--primary)}
+.card-icon{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(255,106,0,0.15),rgba(255,159,67,0.15));display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:36px;color:var(--primary);transition:all 0.3s;border:3px solid rgba(255,106,0,0.25);box-shadow:0 4px 12px rgba(255,106,0,0.15)}
+.card:hover .card-icon{transform:scale(1.15) rotate(10deg);background:linear-gradient(135deg,rgba(255,106,0,0.3),rgba(255,159,67,0.3));border-color:rgba(255,106,0,0.5);box-shadow:0 6px 20px rgba(255,106,0,0.3)}
+.card h3{font-size:22px;margin-bottom:14px;color:#000;font-weight:700}
+.card p{font-size:15px;color:#555;line-height:1.7;margin-bottom:20px}
+.card-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:8px;background:var(--secondary);color:#fff;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:all 0.3s}
+.card-btn:hover{background:var(--primary);transform:translateX(4px)}
+
+/* ============ PAYMENT METHODS STRIP — FIXED ============ */
+.payment-methods-container{
+  margin-top:20px;
+  overflow:hidden;
+  position:relative;
+  height:110px;
+  border-radius:12px;
+  background:linear-gradient(135deg,rgba(255,106,0,0.08),rgba(255,159,67,0.08));
+  border:1px solid rgba(255,106,0,0.2);
+  display:flex;
+  align-items:center;
+}
+.payment-methods-container::before,
+.payment-methods-container::after{
+  content:'';
+  position:absolute;
+  top:0;bottom:0;
+  width:30px;
+  z-index:2;
+  pointer-events:none;
+}
+.payment-methods-container::before{
+  left:0;
+  background:linear-gradient(to right,rgba(20,5,0,0.25),transparent);
+}
+.payment-methods-container::after{
+  right:0;
+  background:linear-gradient(to left,rgba(20,5,0,0.25),transparent);
+}
+.payment-methods-strip{
+  display:flex;
+  gap:0;
+  padding:0;
+  animation:scrollPayments 22s linear infinite;
+  width:max-content;
+  align-items:center;
+}
+.payment-methods-strip:hover{animation-play-state:paused}
+.payment-method{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  flex-shrink:0;
+  opacity:0.85;
+  transition:all 0.3s;
+  cursor:pointer;
+  padding:8px 22px;
+  border-radius:8px;
+  min-width:110px;
+}
+.payment-method:hover{opacity:1;background:rgba(255,106,0,0.15);transform:translateY(-2px)}
+.payment-method-logo{
+  height:38px;
+  width:auto;
+  max-width:90px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  transition:filter 0.3s;
+  display:block;
+}
+.payment-method:hover .payment-method-logo{filter:brightness(1) invert(0) sepia(1) saturate(3) hue-rotate(0deg)}
+.payment-method-name{font-size:11px;font-weight:700;color:rgba(255,255,255,0.8);white-space:nowrap;letter-spacing:0.5px}
+
+/* ============ CONTACT MODAL ============ */
+.contact-modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:2000;animation:fadeInDown 0.3s ease-out;backdrop-filter:blur(3px)}
+.contact-modal-overlay.show{display:flex}
+.contact-modal-card{background:#fff;border-radius:20px;padding:50px 40px;max-width:480px;width:95%;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popIn 0.4s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden}
+.contact-modal-card::before{content:'';position:absolute;top:-100%;right:-100%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,106,0,0.1),transparent);border-radius:50%;animation:floatUp 4s ease-in-out infinite;pointer-events:none}
+.modal-close-btn{position:absolute;top:20px;right:20px;background:var(--light);color:#000;border:none;width:40px;height:40px;border-radius:50%;font-size:24px;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;z-index:10}
+.modal-close-btn:hover{background:var(--primary);color:#fff;transform:rotate(90deg)}
+.modal-header{text-align:center;margin-bottom:30px;position:relative;z-index:1}
+.modal-header h2{font-size:32px;color:#000;margin-bottom:8px;font-weight:800}
+.modal-header p{color:#555;font-size:14px}
+.agent-info{position:relative;z-index:1}
+.agent-detail{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding:16px;background:linear-gradient(135deg,rgba(255,106,0,0.08),rgba(255,159,67,0.08));border-radius:12px;border-left:4px solid var(--primary);transition:all 0.3s;animation:slideInRight 0.6s ease-out backwards}
+.agent-detail:nth-child(1){animation-delay:0.1s}.agent-detail:nth-child(2){animation-delay:0.2s}.agent-detail:nth-child(3){animation-delay:0.3s}.agent-detail:nth-child(4){animation-delay:0.4s}.agent-detail:nth-child(5){animation-delay:0.5s}
+.agent-detail:hover{transform:translateX(8px);background:linear-gradient(135deg,rgba(255,106,0,0.15),rgba(255,159,67,0.15));box-shadow:0 8px 20px rgba(255,106,0,0.15)}
+.agent-detail-icon{font-size:24px;color:var(--primary);min-width:30px;text-align:center}
+.agent-detail-content{flex:1}
+.agent-detail-label{font-size:12px;color:#999;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.agent-detail-value{font-size:16px;color:#000;font-weight:700;margin-top:4px;word-break:break-all}
+.modal-action-btn{width:100%;padding:14px;border-radius:10px;border:none;font-size:16px;font-weight:600;cursor:pointer;transition:all 0.3s;background:linear-gradient(135deg,var(--primary),#ff9f43);color:#fff;margin-top:20px;position:relative;z-index:1}
+.modal-action-btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,106,0,0.3)}
+.modal-action-btn:active{transform:translateY(-1px)}
+
+/* ============ COUNTER ============ */
+#results .card-grid{display:flex;flex-wrap:nowrap;gap:16px;margin-bottom:40px;overflow-x:auto}
+#results .card-grid .card{flex:1 1 0;min-width:0;padding:20px 12px}
+.counter-card{text-align:center}
+.counter-icon{font-size:32px;color:var(--primary);margin-bottom:8px;display:block;animation:pulse 2s ease-in-out infinite}
+.counter-value{font-size:36px;font-weight:800;color:var(--primary);text-shadow:0 2px 4px rgba(255,106,0,0.1);margin-bottom:6px}
+.counter-label{font-size:13px;color:#000;font-weight:600;line-height:1.3}
+@media(max-width:600px){#results .card-grid{flex-wrap:wrap;overflow-x:visible}#results .card-grid .card{flex:1 1 calc(50% - 8px);min-width:calc(50% - 8px)}}
+
+/* ============ CAROUSEL ============ */
+.carousel-wrapper{position:relative;padding:20px 60px}
+.carousel-track{display:flex;gap:24px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:15px}
+.carousel-track::-webkit-scrollbar{height:6px}
+.carousel-track::-webkit-scrollbar-track{background:var(--light);border-radius:10px}
+.carousel-track::-webkit-scrollbar-thumb{background:var(--primary);border-radius:10px}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:var(--primary);color:#fff;border:none;width:50px;height:50px;border-radius:50%;font-size:22px;cursor:pointer;z-index:10;transition:all 0.3s;box-shadow:0 4px 12px rgba(255,106,0,0.3);display:flex;align-items:center;justify-content:center}
+.carousel-btn:hover{background:#d67342;transform:translateY(-50%) scale(1.1);box-shadow:0 6px 20px rgba(255,106,0,0.4)}
+.carousel-btn:active{transform:translateY(-50%) scale(0.95)}
+.carousel-btn-prev{left:10px}
+.carousel-btn-next{right:10px}
+.carousel-card{flex:0 0 auto;width:320px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:40px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.4s;animation:slideUp 0.6s ease-out backwards}
+.carousel-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,0.12);border-color:var(--primary)}
+.carousel-card h4{font-size:18px;margin:12px 0;color:#000;font-weight:700}
+.carousel-card p{font-size:14px;color:#555;line-height:1.6}
+.broker-logo{width:70px;height:70px;object-fit:contain;margin-bottom:12px;padding:10px;background:rgba(255,106,0,0.08);border-radius:12px;transition:all 0.3s}
+.carousel-card:hover .broker-logo{transform:scale(1.2);background:rgba(255,106,0,0.15)}
+
+/* ============ MacBook Pro SNAPSHOT CARDS ============ */
+.snapshot-card{
+  overflow:visible!important;
+  cursor:pointer;
+  border-radius:0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+  width:340px!important;
+  flex:0 0 auto;
+  transition:transform 0.4s cubic-bezier(0.23,1,0.32,1)!important;
+}
+.snapshot-card:hover{transform:translateY(-14px) scale(1.03)!important;box-shadow:none!important;border-color:transparent!important}
+.macbook-shell{position:relative;width:100%;}
+.macbook-lid{
+  position:relative;width:100%;
+  background:linear-gradient(170deg,#2a2a2a 0%,#1a1a1a 40%,#111 100%);
+  border-radius:12px 12px 0 0;
+  padding:10px 10px 0;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.18),0 -2px 8px rgba(0,0,0,0.6);
+}
+.macbook-notch{
+  position:absolute;top:5px;left:50%;transform:translateX(-50%);
+  width:12px;height:6px;background:#0a0a0a;border-radius:0 0 4px 4px;z-index:5;
+}
+.macbook-notch::after{
+  content:'';position:absolute;top:2px;left:50%;transform:translateX(-50%);
+  width:5px;height:5px;background:#1a1a1a;border-radius:50%;box-shadow:0 0 3px rgba(255,255,255,0.15);
+}
+.macbook-screen{
+  position:relative;width:100%;aspect-ratio:16/10;
+  background:#080c10;border-radius:6px;overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,0.8);
+}
+.macbook-screen::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 40%,#1a0800 0%,#0a0500 50%,#050200 100%);
+  z-index:0;
+}
+.macbook-screen::after{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:70%;height:70%;
+  background-image:var(--wfx-logo);
+  background-size:contain;background-repeat:no-repeat;background-position:center;
+  opacity:0.06;z-index:1;pointer-events:none;
+}
+.macbook-menubar{
+  position:absolute;top:0;left:0;right:0;height:22px;
+  background:rgba(20,10,5,0.85);backdrop-filter:blur(8px);
+  display:flex;align-items:center;padding:0 10px;gap:6px;z-index:3;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.macbook-menubar-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.macbook-menubar-dot.red{background:#ff5f57;}
+.macbook-menubar-dot.yellow{background:#febc2e;}
+.macbook-menubar-dot.green{background:#28c840;}
+.macbook-menubar-title{
+  flex:1;text-align:center;font-size:9px;color:rgba(255,255,255,0.4);
+  font-family:Helvetica,sans-serif;letter-spacing:0.3px;margin-right:60px;
+}
+.macbook-screen img{
+  position:absolute;top:22px;left:0;right:0;
+  width:100%;height:calc(100% - 22px);
+  object-fit:cover;z-index:2;
+  transition:transform 0.5s ease;border-radius:0 0 6px 6px;
+}
+.snapshot-card:hover .macbook-screen img{transform:scale(1.04);}
+.macbook-dock{
+  position:absolute;bottom:5px;left:50%;transform:translateX(-50%);
+  display:flex;gap:4px;align-items:flex-end;z-index:4;
+  background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:4px 8px;
+}
+.macbook-dock-icon{
+  width:20px;height:20px;border-radius:5px;
+  background:linear-gradient(135deg,var(--primary),#ff9f43);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:#fff;transition:transform 0.2s;
+}
+.snapshot-card:hover .macbook-dock-icon:nth-child(3){transform:scaleY(1.4) translateY(-3px);}
+.macbook-base{
+  position:relative;width:100%;height:22px;
+  background:linear-gradient(180deg,#1c1c1c 0%,#282828 50%,#1a1a1a 100%);
+  border-radius:0 0 4px 4px;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.08),0 8px 30px rgba(0,0,0,0.7),0 20px 60px rgba(0,0,0,0.4);
+  display:flex;align-items:center;justify-content:center;
+}
+.macbook-base::after{
+  content:'';width:55px;height:2px;background:rgba(255,255,255,0.1);border-radius:2px;
+}
+.macbook-foot{
+  width:96%;margin:0 auto;height:5px;
+  background:linear-gradient(180deg,#151515,#0d0d0d);
+  border-radius:0 0 8px 8px;box-shadow:0 4px 15px rgba(0,0,0,0.5);
+}
+.snapshot-card:hover .macbook-lid{
+  box-shadow:0 0 0 1px rgba(255,255,255,0.18),inset 0 1px 0 rgba(255,255,255,0.25),0 -2px 8px rgba(0,0,0,0.6),0 0 30px rgba(255,106,0,0.12);
+}
+@media(max-width:768px){.snapshot-card{width:240px!important;}}
+@media(max-width:480px){.snapshot-card{width:200px!important;}}
+
+/* ============ SCREENSHOT MODAL ============ */
+.screenshot-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity 0.3s ease;cursor:zoom-out}
+.screenshot-modal.show{opacity:1;pointer-events:all}
+.screenshot-modal .modal-content{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:20px}
+.screenshot-modal img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.8);animation:popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);cursor:default}
+.modal-close{position:fixed;top:20px;right:20px;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);color:#fff;border:2px solid rgba(255,255,255,0.3);width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;z-index:10000}
+.modal-close:hover{background:var(--primary);border-color:var(--primary);transform:rotate(90deg) scale(1.1)}
+
+/* Testimonials */
+.testimonial-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:30px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.4s}
+.testimonial-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,0.12);border-color:var(--primary)}
+.testimonial-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.testimonial-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#ff9f43);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
+.testimonial-name{font-weight:700;color:#000}
+.testimonial-text{font-size:15px;color:#555;line-height:1.7;font-style:italic}
+.rating{color:var(--primary);margin-top:12px}
+
+/* ============ VIDEO SECTION — YouTube Thumbnail Player ============ */
+.video-section{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+@media(max-width:768px){.video-section{grid-template-columns:1fr}}
+
+/* YouTube thumbnail wrapper */
+.yt-player{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 20px 45px rgba(0,0,0,0.18);
+  cursor:pointer;
+  background:#000;
+}
+.yt-player img.yt-thumb{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.4s ease, filter 0.4s ease;
+  border-radius:16px;
+}
+.yt-player:hover img.yt-thumb{
+  transform:scale(1.04);
+  filter:brightness(0.75);
+}
+
+/* Play button */
+.yt-play-btn{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  background:none;
+  border-radius:0;
+  box-shadow:none;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 0.3s ease, filter 0.3s ease;
+  z-index:3;
+  filter:drop-shadow(0 6px 24px rgba(0,0,0,0.55));
+}
+.yt-play-btn img{
+  width:90px;
+  height:auto;
+  display:block;
+  transition:transform 0.3s ease, filter 0.3s ease;
+}
+.yt-player:hover .yt-play-btn{
+  transform:translate(-50%,-50%) scale(1.13);
+  filter:drop-shadow(0 10px 32px rgba(255,0,0,0.55));
+}
+
+/* Overlay label */
+.yt-label{
+  position:absolute;
+  bottom:14px;left:14px;
+  background:rgba(0,0,0,0.72);
+  color:#fff;
+  font-size:12px;font-weight:600;
+  padding:5px 10px;
+  border-radius:6px;
+  display:flex;align-items:center;gap:6px;
+  backdrop-filter:blur(4px);
+  z-index:3;
+  letter-spacing:0.3px;
+}
+.yt-label i{color:#ff4444;}
+
+.beginner-info h3{font-size:28px;margin-bottom:20px;color:#000;font-weight:800}
+.beginner-info p{font-size:16px;color:#555;line-height:1.8;margin-bottom:24px}
+
+/* ============ FOOTER ============ */
+footer{background:var(--secondary);color:#fff;padding:60px 20px 30px;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-bottom:40px}
+footer h4{color:var(--primary);margin-bottom:20px;font-weight:700}
+footer p{font-size:14px;color:#ccc;margin-bottom:12px;line-height:1.7}
+footer a{color:#ccc;font-size:14px;transition:all 0.3s;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+footer a:hover{color:var(--primary);transform:translateX(4px)}
+.social-links{display:flex;gap:12px;margin-top:12px}
+.social-links a{width:40px;height:40px;border-radius:50%;background:rgba(255,106,0,0.15);color:var(--primary);display:flex;align-items:center;justify-content:center;transition:all 0.3s;margin:0}
+.social-links a:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1);color:var(--primary);font-size:14px;font-weight:600}
+@media(max-width:768px){.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:400px){.footer-grid{grid-template-columns:1fr}}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){.carousel-wrapper{padding:20px 40px}}
+@media(max-width:768px){header{margin:5px}.section{padding:40px 20px}.section-title h2{font-size:32px}.card-grid,.risk-grid{grid-template-columns:1fr}.carousel-wrapper{padding:20px 40px}.carousel-btn{width:40px;height:40px;font-size:18px}.carousel-btn-prev{left:5px}.carousel-btn-next{right:5px}.contact-modal-card{padding:40px 25px}.contact-modal-card h2{font-size:26px}.carousel-card{width:280px;padding:30px}}
+@media(max-width:480px){.hero{padding:40px 15px}.section{padding:30px 15px}.section-title h2{font-size:26px}.card{padding:25px 15px}.carousel-wrapper{padding:20px 20px}.payment-methods-strip{gap:0}.payment-method{padding:6px 14px;min-width:90px}.payment-method-logo{height:30px}.payment-method-name{font-size:10px}.carousel-card{width:240px;padding:20px}}
+@media(max-width:768px){#snapshot-carousel .snapshot-card{width:240px!important;}}
+@media(max-width:480px){#snapshot-carousel .snapshot-card{width:200px!important;}}
+
+.read-more-btn{display:inline-flex;align-items:center;gap:8px;padding:0px 20px 0px;background:linear-gradient(135deg,#eaedf0,#84afee);color:#fff;text-decoration:none;border-radius:30px;font-size:14px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.3s ease}
+.read-more-btn i{font-size:13px;transition:transform 0.3s ease}
+.read-more-btn:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,0.25);background:linear-gradient(135deg,#0066ff,#0047b3)}
+.read-more-btn:hover i{transform:translateX(4px)}
+.custom-icon{width:60px;height:auto}
+
+/* ============================================================
+   iPHONE 17 DESIGN — #services .card ONLY
+   ============================================================ */
+:root { --wfx-logo: url('data:image/png;base64,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'); }
+
+#services .card-grid{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:32px;margin-bottom:40px}
+
+#services .card{width:250px!important;min-height:540px!important;background:linear-gradient(170deg,#e2ded9 0%,#d0ccc7 35%,#bebab5 65%,#cac6c1 100%)!important;border:none!important;border-radius:52px!important;padding:9px!important;overflow:visible!important;box-shadow:0 0 0 1.5px rgba(255,255,255,0.65),inset 0 0 0 1.2px rgba(0,0,0,0.18),0 2px 0 rgba(255,255,255,0.5),0 35px 65px rgba(0,0,0,0.18),0 10px 22px rgba(0,0,0,0.10)!important;animation:wfxRise 0.7s ease-out backwards!important;transition:transform 0.45s cubic-bezier(0.23,1,0.32,1),box-shadow 0.45s ease!important;text-align:center!important}
+#services .card:nth-child(1){animation-delay:0.08s!important}
+#services .card:nth-child(2){animation-delay:0.18s!important;background:linear-gradient(170deg,#edd8ba 0%,#d9b48a 35%,#caa470 65%,#d9b48a 100%)!important;box-shadow:0 0 0 1.5px rgba(255,205,120,0.75),inset 0 0 0 1.2px rgba(0,0,0,0.16),0 2px 0 rgba(255,225,155,0.5),0 35px 65px rgba(255,106,0,0.20),0 10px 22px rgba(0,0,0,0.10)!important;transform:scale(1.04)!important}
+#services .card:nth-child(3){animation-delay:0.28s!important}
+
+@keyframes wfxRise{from{opacity:0;transform:translateY(50px) scale(0.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+#services .card::before{content:""!important;position:absolute!important;inset:0!important;border-radius:52px!important;background:linear-gradient(145deg,rgba(255,255,255,0.55) 0%,rgba(255,255,255,0.08) 30%,transparent 55%,rgba(0,0,0,0.04) 100%)!important;pointer-events:none!important;z-index:10!important;left:0!important;width:100%!important;height:100%!important;transform:none!important;transition:none!important}
+#services .card:hover::before{left:0!important}
+#services .card:hover{transform:translateY(-14px) scale(1.015)!important;box-shadow:0 0 0 1.5px rgba(255,255,255,0.7),inset 0 0 0 1.2px rgba(0,0,0,0.18),0 55px 90px rgba(255,106,0,0.15),0 22px 40px rgba(0,0,0,0.12)!important}
+#services .card:nth-child(2):hover{transform:translateY(-14px) scale(1.04)!important}
+
+#services .iphone-screen{background:linear-gradient(175deg,#180900 0%,#0b0300 100%);border-radius:44px;overflow:hidden;position:relative;width:100%;min-height:520px;display:flex;flex-direction:column;align-items:center}
+#services .iphone-screen::before{content:"";position:absolute;top:0;left:0;right:0;height:55%;background:linear-gradient(170deg,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0.02) 55%,transparent 100%);border-radius:44px 44px 0 0;pointer-events:none;z-index:5}
+#services .iphone-screen::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:110px;height:130px;background-image:var(--wfx-logo);background-size:contain;background-repeat:no-repeat;background-position:center;opacity:0.07;pointer-events:none;z-index:1}
+
+#services .dynamic-island{width:88px;height:26px;background:#000;border-radius:0 0 18px 18px;margin:0 auto 14px;flex-shrink:0;position:relative;z-index:6;box-shadow:0 2px 8px rgba(0,0,0,0.8)}
+
+#services .iphone-content{padding:0 18px 18px;display:flex;flex-direction:column;align-items:center;width:100%;flex:1;position:relative;z-index:2}
+
+#services .card .card-icon{width:54px!important;height:54px!important;border-radius:18px!important;background:linear-gradient(145deg,#ff7a1a,#ff6a00,#e55a00)!important;display:flex!important;align-items:center!important;justify-content:center!important;margin:0 auto 10px!important;font-size:24px!important;color:#fff!important;border:none!important;box-shadow:0 1px 0 rgba(255,255,255,0.22) inset,0 6px 18px rgba(255,106,0,0.5)!important;transition:all 0.4s cubic-bezier(0.23,1,0.32,1)!important;flex-shrink:0!important;animation:none!important}
+#services .card:hover .card-icon{transform:scale(1.12) translateY(-2px)!important;border-radius:22px!important;box-shadow:0 1px 0 rgba(255,255,255,0.25) inset,0 10px 26px rgba(255,106,0,0.55)!important}
+
+#services .card h3{font-size:16px!important;font-weight:700!important;color:#fff!important;margin-bottom:8px!important;letter-spacing:-0.2px!important;line-height:1.2!important;position:relative;z-index:2}
+#services .card p{font-size:11.5px!important;color:rgba(255,255,255,0.65)!important;line-height:1.65!important;margin-bottom:10px!important;text-align:left!important;position:relative;z-index:2}
+
+#services .card .read-more-btn{font-size:10px!important;padding:3px 12px!important;border-radius:20px!important;background:rgba(100,160,255,0.2)!important;color:#90c0ff!important;border:1px solid rgba(100,160,255,0.3)!important;box-shadow:none!important;display:inline-flex!important;position:relative;z-index:3;margin-top:4px!important}
+#services .card .read-more-btn:hover{background:rgba(0,102,255,0.4)!important;color:#fff!important;transform:translateY(-2px)!important}
+
+#services .card .card-btn{width:100%!important;padding:12px 8px!important;background:linear-gradient(160deg,#ff7a1a,#ff6a00,#e55a00)!important;color:#fff!important;border:none!important;border-radius:50px!important;font-size:11px!important;font-weight:700!important;cursor:pointer!important;margin-top:auto!important;transition:all 0.35s cubic-bezier(0.23,1,0.32,1)!important;text-transform:uppercase!important;letter-spacing:0.6px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;box-shadow:0 1px 0 rgba(255,255,255,0.2) inset,0 5px 16px rgba(255,106,0,0.5)!important;flex-shrink:0!important;position:relative;z-index:2}
+#services .card .card-btn:hover{transform:translateY(-1px) scale(1.02)!important;box-shadow:0 1px 0 rgba(255,255,255,0.2) inset,0 9px 24px rgba(255,106,0,0.65)!important}
+#services .card .card-btn:active{transform:scale(0.97)!important}
+
+/* ---- Payment strip INSIDE iphone card ---- */
+#services .payment-methods-container{
+  position:relative;
+  z-index:2;
+  border-radius:14px!important;
+  margin-top:10px!important;
+  background:rgba(255,255,255,0.06)!important;
+  border:1px solid rgba(255,255,255,0.08)!important;
+  height:90px!important;
+  overflow:hidden!important;
+  display:flex!important;
+  align-items:center!important;
+  width:100%;
+}
+#services .payment-methods-container::before,
+#services .payment-methods-container::after{
+  content:'';
+  position:absolute;
+  top:0;bottom:0;
+  width:20px;
+  z-index:3;
+  pointer-events:none;
+}
+#services .payment-methods-container::before{
+  left:0;
+  background:linear-gradient(to right,rgba(10,3,0,0.5),transparent);
+}
+#services .payment-methods-container::after{
+  right:0;
+  background:linear-gradient(to left,rgba(10,3,0,0.5),transparent);
+}
+#services .payment-methods-strip{
+  display:flex!important;
+  gap:0!important;
+  padding:0!important;
+  animation:scrollPayments 14s linear infinite!important;
+  width:max-content!important;
+  align-items:center!important;
+}
+#services .payment-methods-strip:hover{animation-play-state:paused!important}
+#services .payment-method{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  flex-shrink:0!important;
+  opacity:0.82!important;
+  transition:all 0.3s!important;
+  cursor:pointer!important;
+  padding:6px 16px!important;
+  border-radius:8px!important;
+  min-width:90px!important;
+  transform:none!important;
+}
+#services .payment-method:hover{opacity:1!important;background:rgba(255,106,0,0.18)!important;transform:translateY(-2px)!important}
+#services .payment-method-logo{
+  height:34px!important;
+  width:auto!important;
+  max-width:80px!important;
+  object-fit:contain!important;
+  filter:none!important;
+  transition:transform 0.3s,filter 0.3s!important;
+  display:block!important;
+}
+#services .payment-method:hover .payment-method-logo{
+  filter:drop-shadow(0 0 6px rgba(255,159,67,0.7))!important;
+  transform:scale(1.1)!important;
+}
+#services .payment-method-name{
+  color:rgba(255,255,255,0.65)!important;
+  font-size:10px!important;
+  font-weight:700!important;
+  white-space:nowrap!important;
+  letter-spacing:0.4px!important;
+}
+
+@media(min-width:769px){#services .card-grid{flex-wrap:nowrap}}
+@media(max-width:768px){
+  #services .card-grid{flex-direction:column!important;align-items:center!important;gap:44px!important}
+  #services .card{width:220px!important;min-height:520px!important}
+  #services .card:nth-child(2){transform:none!important}
+  #services .card:hover,#services .card:nth-child(2):hover{transform:translateY(-10px) scale(1.015)!important}
+  #services .iphone-screen{min-height:500px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="WakandaFX Logo" class="custom-icon" />
+  </div>
+  <nav>
+    <ul class="desktop-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="#snapshots">Snapshots</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="pricing.html" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Join Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="#snapshots">Snapshots</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <a href="beginner.html" class="btn btn-primary"><i class="fas fa-book"></i> Start Learning</a>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <img src="images/logo.png" alt="" class="hero-watermark" aria-hidden="true" />
+  <img src="images/logo.png" alt="" class="hero-watermark" aria-hidden="true" />
+  <img src="images/logo.png" alt="" class="hero-watermark" aria-hidden="true" />
+  <img src="images/logo.png" alt="" class="hero-watermark" aria-hidden="true" />
+  <div class="hero-container">
+    <div class="hero-left">
+      <h1>Trade with Structure.<br><span>Grow with Discipline.</span></h1>
+      <p>Wakanda is one of the Successfully Forex Trader from Tanzania, Provides Professional Forex Education, Trading Signals, and Local Support built for serious traders.</p>
+    </div>
+    <div class="hero-right">
+      <div class="beginner-card">
+        <h3><i class="fas fa-seedling"></i> For Beginners</h3>
+        <p>We provide structured, step-by-step guidance to help you enter Forex market safely and confidently. Build a solid foundation, minimize risk, and develop disciplined trading habits from day one.</p>
+        <a href="beginner.html" class="btn btn-primary"><i class="fas fa-book"></i> Start Learning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BROKERS SECTION -->
+<section class="section" id="brokers">
+  <div class="section-title">
+    <h2><i class="fas fa-handshake" style="color:var(--primary);margin-right:10px"></i>Recommended Brokers</h2>
+    <p>Trusted platforms with secure deposits, fast withdrawals, and professional trading tools</p>
+  </div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel('brokers-carousel',-300)"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel('brokers-carousel',300)"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-track" id="brokers-carousel">
+      <div class="carousel-card">
+        <img src="images/jm.png" alt="JustMarkets" class="broker-logo">
+        <h4>JustMarkets</h4>
+        <p>Minimum deposit from $10, leverage up to 1:3000, and supports MT4 & MT5 platforms.</p>
+        <a href="jm.html" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Visit</a>
+      </div>
+      <div class="carousel-card">
+        <img src="images/deriv.png" alt="Deriv" class="broker-logo">
+        <h4>Deriv</h4>
+        <p>Trusted since 1999, multiple account types, binary options & forex, mobile app.</p>
+        <a href="deriv.html" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Visit</a>
+      </div>
+      <div class="carousel-card">
+        <img src="images/exness.png" alt="Exness" class="broker-logo">
+        <h4>Exness</h4>
+        <p>Min deposit $1, leverage up to 1:Unlimited, instant withdrawals, supports MT4/MT5.</p>
+        <a href="exness.html" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Visit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="section" id="services">
+  <div class="section-title">
+    <h2><i class="fas fa-bolt" style="color:var(--primary);margin-right:10px"></i>What We Offer</h2>
+    <p>Comprehensive trading education, mentorship, and market intelligence solutions</p>
+  </div>
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="iphone-content">
+          <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Local Tanzania Agent</h3>
+          <p>We help you make secure deposits and withdrawals with trusted brokers. Get personalized assistance with payment processing and account management from our local team.<a href="local.html" class="read-more-btn"><i class="fas fa-external-link-alt"></i> read more</a></p>
+          <button class="card-btn" onclick="openContactModal()"><i class="fas fa-phone"></i> Contact Agent</button>
+          <div class="payment-methods-container">
+            <div class="payment-methods-strip" id="pay-strip">
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://static.vecteezy.com/system/resources/previews/067/565/521/non_2x/binance-rounded-logo-design-free-png.png" alt="Binance">
+                <div class="payment-method-name">Binance</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://fma.vu/wp-content/uploads/2020/12/deriv-logo-dark-e1607706800874.png" alt="Deriv">
+                <div class="payment-method-name">Deriv</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://buyshares.co.za/wp-content/uploads/2020/08/exness-2.png" alt="Exness">
+                <div class="payment-method-name">Exness</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://www.tecnicasdetrading.com/wp-content/uploads/2023/08/logo-broker-justmarkets.png" alt="JustMarkets">
+                <div class="payment-method-name">JustMarkets</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://static.vecteezy.com/system/resources/previews/067/565/497/non_2x/skrill-logo-rounded-app-icon-free-png.png" alt="Skrill">
+                <div class="payment-method-name">Skrill</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT">
+                <div class="payment-method-name">USDT</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://static.vecteezy.com/system/resources/previews/067/565/521/non_2x/binance-rounded-logo-design-free-png.png" alt="Binance">
+                <div class="payment-method-name">Binance</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://fma.vu/wp-content/uploads/2020/12/deriv-logo-dark-e1607706800874.png" alt="Deriv">
+                <div class="payment-method-name">Deriv</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://buyshares.co.za/wp-content/uploads/2020/08/exness-2.png" alt="Exness">
+                <div class="payment-method-name">Exness</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://www.tecnicasdetrading.com/wp-content/uploads/2023/08/logo-broker-justmarkets.png" alt="JustMarkets">
+                <div class="payment-method-name">JustMarkets</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://static.vecteezy.com/system/resources/previews/067/565/497/non_2x/skrill-logo-rounded-app-icon-free-png.png" alt="Skrill">
+                <div class="payment-method-name">Skrill</div>
+              </div>
+              <div class="payment-method">
+                <img class="payment-method-logo" src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT">
+                <div class="payment-method-name">USDT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="iphone-content">
+          <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Mentorship Programs</h3>
+          <p>A structured and comprehensive mentorship program designed to cultivate disciplined, confident traders, equipping participants with practical skills and delivering real, measurable results in the market.</p>
+          <button class="card-btn" onclick="window.location.href='pricing.html';"><i class="fas fa-arrow-right"></i> Join Program</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="iphone-content">
+          <div class="card-icon"><i class="fas fa-signal"></i></div>
+          <h3>Trading Signals</h3>
+          <p>Receive high-probability trade alerts, meticulously crafted and supported by robust risk management strategies, empowering traders to make informed decisions and achieve consistently optimal results in the market.</p>
+          <button class="card-btn" onclick="window.location.href='signals.html';"><i class="fas fa-chart-line"></i> Join the Service</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="section" id="results">
+  <div class="section-title">
+    <h2><i class="fas fa-trophy" style="color:var(--primary);margin-right:10px"></i>Official WakandaFX Performance</h2>
+    <p>Real metrics demonstrating our commitment to trader success</p>
+  </div>
+  <div class="card-grid">
+    <div class="card counter-card"><span class="counter-icon"><i class="fas fa-users"></i></span><div class="counter-value" data-target="1200" data-suffix="+">0</div><div class="counter-label">Customers Served</div></div>
+    <div class="card counter-card"><span class="counter-icon"><i class="fas fa-book-reader"></i></span><div class="counter-value" data-target="350">0</div><div class="counter-label">Students Trained</div></div>
+    <div class="card counter-card"><span class="counter-icon"><i class="fas fa-chart-bar"></i></span><div class="counter-value" data-target="39700">0</div><div class="counter-label">Annual Pips Gained</div></div>
+    <div class="card counter-card"><span class="counter-icon"><i class="fas fa-star"></i></span><div class="counter-value" data-target="89">0</div><div class="counter-label">Average Win Rate (%)</div></div>
+  </div>
+</section>
+
+<!-- SNAPSHOTS SECTION -->
+<section class="section" id="snapshots">
+  <div class="section-title">
+    <h2><i class="fas fa-images" style="color:var(--primary);margin-right:10px"></i>Trading Snapshots</h2>
+    <p>Real trading results and market analysis from our expert traders</p>
+  </div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel('snapshot-carousel',-300)"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel('snapshot-carousel',300)"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-track" id="snapshot-carousel">
+
+      <div class="carousel-card snapshot-card" onclick="openModal('images/Picture1.png')">
+        <div class="macbook-shell">
+          <div class="macbook-lid">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <div class="macbook-menubar">
+                <span class="macbook-menubar-dot red"></span>
+                <span class="macbook-menubar-dot yellow"></span>
+                <span class="macbook-menubar-dot green"></span>
+                <span class="macbook-menubar-title">WakandaFX — Chart Analysis</span>
+              </div>
+              <img src="images/Picture1.png" alt="Trading snapshot">
+              <div class="macbook-dock">
+                <div class="macbook-dock-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bell"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bolt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-foot"></div>
+        </div>
+      </div>
+
+      <div class="carousel-card snapshot-card" onclick="openModal('images/Picture2.png')">
+        <div class="macbook-shell">
+          <div class="macbook-lid">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <div class="macbook-menubar">
+                <span class="macbook-menubar-dot red"></span>
+                <span class="macbook-menubar-dot yellow"></span>
+                <span class="macbook-menubar-dot green"></span>
+                <span class="macbook-menubar-title">WakandaFX — Trade Result</span>
+              </div>
+              <img src="images/Picture2.png" alt="Trading snapshot">
+              <div class="macbook-dock">
+                <div class="macbook-dock-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bell"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bolt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-foot"></div>
+        </div>
+      </div>
+
+      <div class="carousel-card snapshot-card" onclick="openModal('images/Picture3.png')">
+        <div class="macbook-shell">
+          <div class="macbook-lid">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <div class="macbook-menubar">
+                <span class="macbook-menubar-dot red"></span>
+                <span class="macbook-menubar-dot yellow"></span>
+                <span class="macbook-menubar-dot green"></span>
+                <span class="macbook-menubar-title">WakandaFX — Market Analysis</span>
+              </div>
+              <img src="images/Picture3.png" alt="Trading snapshot">
+              <div class="macbook-dock">
+                <div class="macbook-dock-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bell"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bolt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-foot"></div>
+        </div>
+      </div>
+
+      <div class="carousel-card snapshot-card" onclick="openModal('images/Picture4.png')">
+        <div class="macbook-shell">
+          <div class="macbook-lid">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <div class="macbook-menubar">
+                <span class="macbook-menubar-dot red"></span>
+                <span class="macbook-menubar-dot yellow"></span>
+                <span class="macbook-menubar-dot green"></span>
+                <span class="macbook-menubar-title">WakandaFX — Signal Profit</span>
+              </div>
+              <img src="images/Picture4.png" alt="Trading snapshot">
+              <div class="macbook-dock">
+                <div class="macbook-dock-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bell"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bolt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-foot"></div>
+        </div>
+      </div>
+
+      <div class="carousel-card snapshot-card" onclick="openModal('images/Picture5.png')">
+        <div class="macbook-shell">
+          <div class="macbook-lid">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <div class="macbook-menubar">
+                <span class="macbook-menubar-dot red"></span>
+                <span class="macbook-menubar-dot yellow"></span>
+                <span class="macbook-menubar-dot green"></span>
+                <span class="macbook-menubar-title">WakandaFX — Live Trade</span>
+              </div>
+              <img src="images/Picture5.png" alt="Trading snapshot">
+              <div class="macbook-dock">
+                <div class="macbook-dock-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bell"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bolt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-foot"></div>
+        </div>
+      </div>
+
+      <div class="carousel-card snapshot-card" onclick="openModal('images/Picture6.png')">
+        <div class="macbook-shell">
+          <div class="macbook-lid">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <div class="macbook-menubar">
+                <span class="macbook-menubar-dot red"></span>
+                <span class="macbook-menubar-dot yellow"></span>
+                <span class="macbook-menubar-dot green"></span>
+                <span class="macbook-menubar-title">WakandaFX — Win Rate</span>
+              </div>
+              <img src="images/Picture6.png" alt="Trading snapshot">
+              <div class="macbook-dock">
+                <div class="macbook-dock-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bell"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bolt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-foot"></div>
+        </div>
+      </div>
+
+      <div class="carousel-card snapshot-card" onclick="openModal('images/Picture7.png')">
+        <div class="macbook-shell">
+          <div class="macbook-lid">
+            <div class="macbook-notch"></div>
+            <div class="macbook-screen">
+              <div class="macbook-menubar">
+                <span class="macbook-menubar-dot red"></span>
+                <span class="macbook-menubar-dot yellow"></span>
+                <span class="macbook-menubar-dot green"></span>
+                <span class="macbook-menubar-title">WakandaFX — Forex Signals</span>
+              </div>
+              <img src="images/Picture7.png" alt="Trading snapshot">
+              <div class="macbook-dock">
+                <div class="macbook-dock-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bell"></i></div>
+                <div class="macbook-dock-icon"><i class="fas fa-bolt"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="macbook-base"></div>
+          <div class="macbook-foot"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="section" id="video">
+  <div class="section-title">
+    <h2><i class="fas fa-play-circle" style="color:var(--primary);margin-right:10px"></i>New to Forex?</h2>
+    <p>Watch our comprehensive tutorial and learn the fundamentals of profitable trading</p>
+  </div>
+  <div class="video-section">
+
+    <!-- YouTube thumbnail player — clicks open YouTube -->
+    <a class="yt-player" href="https://youtu.be/0GQit3E9bgo" target="_blank" rel="noopener noreferrer" aria-label="Watch WakandaFX intro video on YouTube">
+      <!-- maxresdefault gives the best quality thumbnail; hqdefault as fallback -->
+      <img
+        class="yt-thumb"
+        src="https://img.youtube.com/vi/0GQit3E9bgo/maxresdefault.jpg"
+        onerror="this.src='https://img.youtube.com/vi/0GQit3E9bgo/hqdefault.jpg'"
+        alt="WakandaFX Forex Tutorial Video"
+        loading="lazy"
+      >
+      <!-- YouTube logo play button -->
+      <div class="yt-play-btn" aria-hidden="true">
+        <img src="data:image/png;base64,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" alt="Play" style="width:80px;height:auto;display:block;">
+      </div>
+      <!-- Label badge -->
+      <div class="yt-label">
+        <i class="fab fa-youtube"></i> Watch on YouTube
+      </div>
+    </a>
+
+    <div class="beginner-info">
+      <h3>Start Your Trading Journey Today</h3>
+      <p>Welcome to Forex trading! Learn market basics, risk management, and trading psychology to grow confidently.</p>
+      <p>Our comprehensive tutorials cover everything a beginner needs: currency pairs, market analysis, and proven trading strategies used by professional traders.</p>
+      <a href="beginner.html" class="btn btn-primary"><i class="fas fa-book"></i> Beginner Resources</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="section" id="testimonials">
+  <div class="section-title">
+    <h2><i class="fas fa-comments" style="color:var(--primary);margin-right:10px"></i>Trader Testimonials</h2>
+    <p>Real stories from our successful students and traders</p>
+  </div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel('testimonials-carousel',-300)"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel('testimonials-carousel',300)"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-track" id="testimonials-carousel">
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">LM</div><div class="testimonial-name">Leonard Mabula</div></div><div class="testimonial-text">"Aisee hii mentorship ni hatari! Kila wiki napiga profit fresh tu. huwezi kufananisha kama mwanzo kabisa."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">AN</div><div class="testimonial-name">Amina Nuru</div></div><div class="testimonial-text">"Nilikuwa napoteza sana kabla sijajiunga. Sasa hivi napiga trade kwa confidence kabisa."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">MB</div><div class="testimonial-name">Milton Buhombe</div></div><div class="testimonial-text">"Mentorship yako kaka imenisaidia kuwa na plan kamili. Sifanyi trade kwa papara tena."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">RF</div><div class="testimonial-name">Rehema Francis</div></div><div class="testimonial-text">"Kwa kweli nimeona mabadiliko makubwa. Profit inaingia steady tu."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">BS</div><div class="testimonial-name">Baraka Said</div></div><div class="testimonial-text">"Signals zao zinaeleweka na support ipo muda wote. Hakuna kuachwa hewani."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">HN</div><div class="testimonial-name">Hassan Ngowi</div></div><div class="testimonial-text">"Nilianza na mtaji mdogo sana, sasa hivi naona kabisa direction ya maisha inabadilika."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">ZW</div><div class="testimonial-name">Zuwena William</div></div><div class="testimonial-text">"Hakuna utapeli hapa, mambo ni real kabisa. Nimejiridhisha mwenyewe."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">DK</div><div class="testimonial-name">Davis Komba</div></div><div class="testimonial-text">"Kabla nilikuwa naogopa sana soko, sasa naingia trade nikiwa na uhakika."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">MS</div><div class="testimonial-name">Mariam Selemani</div></div><div class="testimonial-text">"Nimejifunza discipline ya trading. Sasa sifanyi maamuzi ya haraka haraka."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">PL</div><div class="testimonial-name">Peter Lema</div></div><div class="testimonial-text">"Nimepiga profit mpaka nikawa nashangaa mwenyewe. Hii kitu iko serious."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">SN</div><div class="testimonial-name">Salma Nassor</div></div><div class="testimonial-text">"Kwa mara ya kwanza naona matokeo ya kweli kwenye trading. Nimefurahi sana."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div class="carousel-card testimonial-card"><div class="testimonial-header"><div class="testimonial-avatar">ET</div><div class="testimonial-name">Emmanuel Temba</div></div><div class="testimonial-text">"Ukifuata maelekezo yao tu, hutajuta. Mimi nimeshaona matokeo tayari."</div><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- SCREENSHOT MODAL -->
+<div class="screenshot-modal" id="screenshot-modal">
+  <div class="modal-content" onclick="closeModal()">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <img src="" alt="Enlarged screenshot" id="modal-img" onclick="event.stopPropagation()">
+  </div>
+</div>
+
+<!-- CONTACT AGENT MODAL -->
+<div class="contact-modal-overlay" id="contact-modal-overlay" onclick="closeContactModal(event)">
+  <div class="contact-modal-card" onclick="event.stopPropagation()">
+    <button class="modal-close-btn" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-header">
+      <h2>Our Local Agent</h2>
+      <p>Direct contact information for deposits & withdrawals</p>
+    </div>
+    <div class="agent-info">
+      <div class="agent-detail"><div class="agent-detail-icon"><i class="fas fa-user-circle"></i></div><div class="agent-detail-content"><div class="agent-detail-label">Agent Name</div><div class="agent-detail-value">Wakanda</div></div></div>
+      <div class="agent-detail"><div class="agent-detail-icon"><i class="fas fa-phone"></i></div><div class="agent-detail-content"><div class="agent-detail-label">Phone Number</div><div class="agent-detail-value">+255 741 642 682</div></div></div>
+      <div class="agent-detail"><div class="agent-detail-icon"><i class="fas fa-whatsapp" style="color:#25d366"></i></div><div class="agent-detail-content"><div class="agent-detail-label">WhatsApp</div><div class="agent-detail-value">+255 741 642 682</div></div></div>
+      <div class="agent-detail"><div class="agent-detail-icon"><i class="fas fa-envelope"></i></div><div class="agent-detail-content"><div class="agent-detail-label">Email</div><div class="agent-detail-value">keniziodenis50@gmail.com</div></div></div>
+      <div class="agent-detail"><div class="agent-detail-icon"><i class="fas fa-map-marker-alt"></i></div><div class="agent-detail-content"><div class="agent-detail-label">Location</div><div class="agent-detail-value">Dar es Salaam, Tanzania</div></div></div>
+    </div>
+    <button class="modal-action-btn" onclick="window.open('https://wa.me/255741642682','_blank')"><i class="fas fa-whatsapp"></i> Chat on WhatsApp</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4><i class="fas fa-share-alt"></i> Follow Us</h4>
+        <p>Connect with our community on social media for daily tips and updates.</p>
+        <div class="social-links">
+          <a href="https://discord.gg/Wh8WVbpYb" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+          <a href="https://www.instagram.com/wakandafx_?igsh=dzB5ZTdqODd0cjBj&utm_source=qr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/255741642682" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4><i class="fas fa-link"></i> Quick Links</h4>
+        <a href="#home"><i class="fas fa-arrow-right"></i> Home</a>
+        <a href="#brokers"><i class="fas fa-arrow-right"></i> Brokers</a>
+        <a href="#services"><i class="fas fa-arrow-right"></i> Services</a>
+        <a href="#results"><i class="fas fa-arrow-right"></i> Results</a>
+        <a href="#testimonials"><i class="fas fa-arrow-right"></i> Testimonials</a>
+      </div>
+      <div>
+        <h4><i class="fas fa-phone"></i> Contact Us</h4>
+        <p>Email: <a href="mailto:keniziodenis50@gmail.com">keniziodenis50@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/255741642682">+255 741 642 682</a></p>
+        <p>Location: Dar es Salaam, Tanzania</p>
+      </div>
+      <div>
+        <h4><i class="fas fa-exclamation-circle"></i> Risk Disclaimer</h4>
+        <p>Trading Forex involves substantial risk. What you need is about risk management, discipline and market psychology. Trade only with capital you can afford to lose.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><i class="fas fa-copyright"></i> 2026 WakandaFX. All Rights Reserved. | Professional Forex Training &amp; Signals</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+if(hamburger && mobileMenu){
+  hamburger.addEventListener('click',function(){hamburger.classList.toggle('active');mobileMenu.classList.toggle('show')});
+  mobileMenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{hamburger.classList.remove('active');mobileMenu.classList.remove('show')})});
+}
+function animateCounter(el){
+  const target=parseInt(el.getAttribute('data-target'));
+  const suffix=el.getAttribute('data-suffix')||'';
+  const duration=2000;const start=Date.now();
+  function updateCount(){
+    const elapsed=Date.now()-start;const progress=Math.min(elapsed/duration,1);
+    const current=Math.floor(target*progress);
+    el.innerText=current.toLocaleString()+(progress>=1?suffix:'');
+    if(progress<1)requestAnimationFrame(updateCount);
+  }
+  updateCount();
+}
+const counterObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting&&!entry.target.dataset.animated){entry.target.dataset.animated='true';animateCounter(entry.target)}})},{threshold:0.5});
+document.querySelectorAll('.counter-value').forEach(el=>counterObserver.observe(el));
+function scrollCarousel(id,dist){const el=document.getElementById(id);if(el)el.scrollBy({left:dist,behavior:'smooth'})}
+function openModal(src){const modal=document.getElementById('screenshot-modal');const img=document.getElementById('modal-img');if(modal&&img){img.src=src;modal.classList.add('show');document.body.style.overflow='hidden'}}
+function closeModal(){const modal=document.getElementById('screenshot-modal');if(modal){modal.classList.remove('show');document.body.style.overflow='auto'}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();const overlay=document.getElementById('contact-modal-overlay');if(overlay&&overlay.classList.contains('show'))closeContactModal()}});
+function openContactModal(){const overlay=document.getElementById('contact-modal-overlay');if(overlay){overlay.classList.add('show');document.body.style.overflow='hidden'}}
+function closeContactModal(event){const overlay=document.getElementById('contact-modal-overlay');if(!overlay)return;if(event&&event.target.id!=='contact-modal-overlay')return;overlay.classList.remove('show');document.body.style.overflow='auto'}
+const cardObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.style.animation='slideUp 0.6s ease-out forwards'})},{threshold:0.1});
+document.querySelectorAll('.card,.risk-card,.carousel-card,.testimonial-card').forEach(card=>cardObserver.observe(card));
+
+/* Fix seamless payment strip loop */
+(function(){
+  const strip = document.getElementById('pay-strip');
+  if(!strip) return;
+  function fixLoop(){
+    const items = strip.children;
+    const count = items.length;
+    const halfCount = count / 2;
+    let halfW = 0;
+    for(let i=0;i<halfCount;i++) halfW += items[i].getBoundingClientRect().width;
+    const styleId = 'pay-strip-style';
+    let styleEl = document.getElementById(styleId);
+    if(!styleEl){styleEl=document.createElement('style');styleEl.id=styleId;document.head.appendChild(styleEl);}
+    styleEl.textContent = `@keyframes scrollPayments{0%{transform:translateX(0)}100%{transform:translateX(-${halfW}px)}} #services .payment-methods-strip{animation-duration:14s!important}`;
+  }
+  window.addEventListener('load', fixLoop);
+  setTimeout(fixLoop, 500);
+})();
+
+console.log('WakandaFX Loaded');
+</script>
+</body>
+</html>

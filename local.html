@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Tanzania Agent | Secure Deposits & Withdrawals</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#000;
+  line-height:1.6;
+}
+
+.container{
+  width:85%;
+  margin:auto;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+header{
+  padding:20px 10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  border-radius:15px;
+  margin:10px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#ff6a00;
+}
+
+.btn{
+  padding:10px 22px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+  border:none;
+}
+
+.btn-primary{
+  background:#ff6a00;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  opacity:0.9;
+  transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+  padding:60px 20px;
+  text-align:center;
+  background: linear-gradient(135deg,#fff9f7,#f5f0ec);
+  border-radius:20px;
+  margin-bottom:60px;
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#ff6a00;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:#555;
+  margin-bottom:30px;
+}
+
+/* PAYMENT SECTION */
+.payment-section{
+  margin-bottom:80px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title h2{
+  font-size:36px;
+}
+
+/* Outer mask for seamless edges */
+.payment-cards{
+  overflow:hidden;
+  position:relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.payment-track{
+  display:flex;
+  gap:20px;
+  animation:scroll 18s linear infinite;
+  width:max-content;
+}
+
+.payment-track:hover{
+  animation-play-state:paused;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+.payment-card{
+  width:220px;
+  flex-shrink:0;
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  text-align:center;
+  border:2px solid #f3f3f3;
+  transition:border-color 0.3s, transform 0.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.payment-card img{
+  width:120px;
+  height:120px;
+  object-fit:contain;
+}
+
+.payment-card:hover{
+  border-color:#ff6a00;
+  transform:translateY(-5px);
+}
+
+/* TESTIMONIALS */
+.testimonial-section{
+  margin-bottom:80px;
+}
+
+.testimonial-slider-container{
+  position:relative;
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+}
+
+.testimonial-wrapper{
+  display:flex;
+  gap:25px;
+  overflow:hidden;
+  scroll-behavior:smooth;
+  width:100%;
+}
+
+.testimonial-card{
+  min-width:220px;
+  max-width:220px;
+  background:#fff;
+  padding:22px 16px;
+  border-radius:15px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  text-align:center;
+  transition:0.3s;
+  font-size:14px;
+}
+
+.testimonial-card:hover{
+  transform:translateY(-5px);
+}
+
+.avatar{
+  width:60px;
+  height:60px;
+  background:#ff6a00;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 15px;
+  font-weight:bold;
+}
+
+.stars{
+  color:#ff6a00;
+  margin-top:10px;
+}
+
+.nav-btn{
+  background:#ff6a00;
+  border:none;
+  color:#fff;
+  font-size:22px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  cursor:pointer;
+  position:absolute;
+  z-index:5;
+}
+
+.prev{ left:-20px; }
+.next{ right:-20px; }
+
+.progress-container{
+  max-width:1100px;
+  margin:25px auto 0;
+  height:4px;
+  background:#ddd;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:#ff6a00;
+  transition:0.3s;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:60px 0 30px;
+  color:#fff;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
+
+footer h4{
+  margin-bottom:15px;
+  color:#ff6a00;
+}
+
+footer p{
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  font-size:13px;
+  color:#ff6a00;
+}
+
+.custom-icon {
+  width: 60px; 
+  height: auto; 
+}
+
+/* =====================
+   MOBILE RESPONSIVE
+   ===================== */
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .section-title h2{
+    font-size:24px;
+  }
+
+  /* Payment cards - smaller on mobile */
+  .payment-card{
+    width:140px;
+    padding:15px 10px;
+  }
+
+  .payment-card img{
+    width:80px;
+    height:80px;
+  }
+
+  .payment-track{
+    gap:14px;
+    /* Slower animation speed so cards are visible longer */
+    animation-duration:14s;
+  }
+
+  /* Testimonials - full width single card on mobile */
+  .testimonial-slider-container{
+    padding:0 10px;
+  }
+
+  .testimonial-card{
+    min-width:calc(80vw);
+    max-width:calc(80vw);
+    padding:18px 14px;
+    font-size:13px;
+  }
+
+  .nav-btn{
+    width:36px;
+    height:36px;
+    font-size:16px;
+  }
+
+  .prev{ left:-5px; }
+  .next{ right:-5px; }
+
+  .container{
+    width:92%;
+  }
+
+  header{
+    margin:8px;
+    padding:14px 10px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .btn{
+    padding:8px 14px;
+    font-size:13px;
+  }
+
+  .hero{
+    padding:40px 15px;
+    margin-bottom:40px;
+  }
+
+  .payment-section{
+    margin-bottom:50px;
+  }
+}
+
+@media(max-width:400px){
+  .payment-card{
+    width:120px;
+    padding:12px 8px;
+  }
+
+  .payment-card img{
+    width:65px;
+    height:65px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <img src="images/logo.png" alt="WakandaFX Logo" class="custom-icon" />
+  <a href="index.html" class="btn btn-primary">← Back Home</a>
+</header>
+
+<section class="hero">
+  <h1>Trusted <span>Local Tanzania Agent</span></h1>
+  <p>
+    We help you make secure deposits and withdrawals with trusted brokers.
+    Get personalized assistance with payment processing and account management
+    from our professional local team in Tanzania.
+  </p>
+</section>
+
+<section class="payment-section">
+  <div class="section-title">
+    <h2>Supported Payment Methods</h2>
+  </div>
+
+  <div class="payment-cards">
+    <div class="payment-track" id="paymentTrack">
+
+      <!-- First Set -->
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHGaO2UmTmdby51EwZETn_VDzyamDUVj5uvA&s" alt="Payment 1">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnGvgKTNEF5W5rKBEhtvlhOJYHtlf__J8D2g&s" alt="Payment 2">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnCXIdX_Bccn4BjpgFNl0I4aSBfPBJaLurRw&s" alt="Payment 3">
+      </div>
+      <div class="payment-card">
+        <img src="https://zansec.co.tz/img/halopesa.png" alt="Halopesa">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNB_dxGFM1waA5pGht4iIqwr2V7bUw8pT5wQ&s" alt="Payment 5">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS3g5v2DShl77Lv0FMlvRuQqY0y7bV_qUG3Q&s" alt="Payment 6">
+      </div>
+
+      <!-- Duplicate Set for seamless loop -->
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHGaO2UmTmdby51EwZETn_VDzyamDUVj5uvA&s" alt="Payment 1">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnGvgKTNEF5W5rKBEhtvlhOJYHtlf__J8D2g&s" alt="Payment 2">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnCXIdX_Bccn4BjpgFNl0I4aSBfPBJaLurRw&s" alt="Payment 3">
+      </div>
+      <div class="payment-card">
+        <img src="https://zansec.co.tz/img/halopesa.png" alt="Halopesa">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNB_dxGFM1waA5pGht4iIqwr2V7bUw8pT5wQ&s" alt="Payment 5">
+      </div>
+      <div class="payment-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS3g5v2DShl77Lv0FMlvRuQqY0y7bV_qUG3Q&s" alt="Payment 6">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-section">
+  <div class="section-title">
+    <h2>Client Testimonials</h2>
+  </div>
+
+  <div class="testimonial-slider-container">
+
+    <button class="nav-btn prev">&#10094;</button>
+
+    <div class="testimonial-wrapper" id="testimonialSlider">
+
+      <div class="testimonial-card">
+        <div class="avatar">JM</div>
+        <h4>John M. – Dar es Salaam</h4>
+        <p>"Deposit yangu iliingia ndani ya dakika 5. Huduma ni ya uhakika sana."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="avatar">AK</div>
+        <h4>Asha K. – Dodoma</h4>
+        <p>"Nilifanya withdrawal ya $500 bila stress. Asante Wakandafx!"</p>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="avatar">EP</div>
+        <h4>Emmanuel P. – Arusha</h4>
+        <p>"Support yao ni fast sana."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="avatar">NL</div>
+        <h4>Neema L. – Mwanza</h4>
+        <p>"Nimewithdraw mara 3 tayari."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+
+    </div>
+
+    <button class="nav-btn next">&#10095;</button>
+
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="testimonialProgress"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>Services</h4>
+      <p>Secure Deposits</p>
+      <p>Fast Withdrawals</p>
+      <p>Account Assistance</p>
+    </div>
+    <div>
+      <h4>Payment Methods</h4>
+      <p>M-Pesa</p>
+      <p>Tigo Pesa</p>
+      <p>Airtel Money</p>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <p>Local Tanzania Team</p>
+      <p>Fast Response</p>
+      <p>Trusted Brokers</p>
+    </div>
+    <div>
+      <h4>Risk Warning</h4>
+      <p>Trading involves risk. Only trade with capital you can afford to lose.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Wakandafx. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+/* =====================
+   TESTIMONIAL SLIDER
+   ===================== */
+const slider = document.getElementById("testimonialSlider");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const progress = document.getElementById("testimonialProgress");
+
+let autoSlide;
+let scrollAmount = 0;
+
+/* Duplicate cards for infinite effect */
+slider.innerHTML += slider.innerHTML;
+
+function getCardWidth(){
+  const card = slider.querySelector(".testimonial-card");
+  if(!card) return 285;
+  const style = getComputedStyle(slider);
+  const gap = parseInt(style.gap) || 25;
+  return card.offsetWidth + gap;
+}
+
+function updateProgress(){
+  const maxScroll = slider.scrollWidth / 2;
+  const percent = Math.min((scrollAmount / maxScroll) * 100, 100);
+  progress.style.width = percent + "%";
+}
+
+function slideNext(){
+  const cardWidth = getCardWidth();
+  scrollAmount += cardWidth;
+  slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
+
+  if(scrollAmount >= slider.scrollWidth / 2){
+    scrollAmount = 0;
+    slider.scrollTo({ left: 0, behavior: "auto" });
+  }
+  updateProgress();
+}
+
+function slidePrev(){
+  const cardWidth = getCardWidth();
+  scrollAmount -= cardWidth;
+  if(scrollAmount < 0){
+    scrollAmount = slider.scrollWidth / 2 - cardWidth;
+    slider.scrollTo({ left: scrollAmount, behavior: "auto" });
+  } else {
+    slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
+  }
+  updateProgress();
+}
+
+nextBtn.addEventListener("click", slideNext);
+prevBtn.addEventListener("click", slidePrev);
+
+function startAuto(){
+  autoSlide = setInterval(slideNext, 4500);
+}
+
+function stopAuto(){
+  clearInterval(autoSlide);
+}
+
+startAuto();
+
+slider.addEventListener("mouseenter", stopAuto);
+slider.addEventListener("mouseleave", startAuto);
+
+/* Mobile Swipe */
+let startX = 0;
+
+slider.addEventListener("touchstart", (e)=>{
+  startX = e.touches[0].clientX;
+  stopAuto();
+}, { passive: true });
+
+slider.addEventListener("touchend", (e)=>{
+  let endX = e.changedTouches[0].clientX;
+  if(startX - endX > 40) slideNext();
+  else if(endX - startX > 40) slidePrev();
+  startAuto();
+}, { passive: true });
+
+
+/* =====================
+   PAYMENT TRACK - compute correct translateX for seamless loop
+   ===================== */
+(function setupPaymentScroll(){
+  const track = document.getElementById("paymentTrack");
+  if(!track) return;
+
+  function setAnimDuration(){
+    // On mobile use shorter duration, desktop longer
+    const isMobile = window.innerWidth <= 768;
+    track.style.animationDuration = isMobile ? "14s" : "18s";
+  }
+
+  setAnimDuration();
+  window.addEventListener("resize", setAnimDuration);
+})();
+</script>
+
+</body>
+</html>

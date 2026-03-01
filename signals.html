@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Trading Signals | High Probability Trade Alerts</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff6a00;
+}
+
+nav a {
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  color: #111;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff6a00;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff9f7, #f3efec);
+  border-radius: 20px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* WATERMARK */
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  max-width: 70%;
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  filter: grayscale(100%);
+}
+
+.hero > *:not(.hero-watermark) {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero span {
+  color: #ff6a00;
+}
+
+.hero p {
+  max-width: 750px;
+  margin: 0 auto 30px;
+  color: #555;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #ff6a00;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #e65c00;
+  transform: translateY(-3px);
+}
+
+/* FEATURES */
+.features {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  margin-bottom: 15px;
+  color: #ff6a00;
+}
+
+.feature-card p {
+  color: #555;
+  font-size: 15px;
+}
+
+/* PRICING */
+.pricing {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pricing h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.price-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.price-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(119, 116, 116, 0.987);
+  transition: 0.3s;
+  position: relative;
+}
+
+.price-card:hover {
+  transform: translateY(-8px);
+}
+
+.price-card h3 {
+  margin-bottom: 15px;
+  color: #ff6a00;
+}
+
+.price {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.price-card ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.price-card ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #555;
+}
+
+.price-card .btn {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+/* POPULAR BADGE */
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff6a00, #ff9f43);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.4);
+}
+
+/* Highlight semi-annual card */
+.price-card.featured {
+  border: 2px solid #ff6a00;
+  box-shadow: 0 8px 30px rgba(255, 106, 0, 0.2);
+}
+
+.price-card.featured:hover {
+  box-shadow: 0 14px 40px rgba(255, 106, 0, 0.3);
+}
+
+/* Savings tag */
+.savings-tag {
+  display: inline-block;
+  background: #fff3ec;
+  color: #ff6a00;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ffd0b3;
+}
+
+/* CTA */
+.cta {
+  background: #ff6a00;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+}
+
+.cta .btn {
+  background: #fff;
+  color: #ff6a00;
+  font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .pricing h2 {
+    font-size: 28px;
+  }
+}
+
+/* CONTACT MODAL OVERLAY */
+.contact-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.contact-modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* MODAL CARD */
+.contact-modal-card {
+  width: 95%;
+  max-width: 450px;
+  background: #111;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transform: translateY(40px);
+  transition: 0.3s ease;
+  animation: slideUp 0.4s ease forwards;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CLOSE BUTTON */
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff6a00;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.modal-close-btn:hover {
+  background: #e65c00;
+}
+
+/* MODAL HEADER */
+.modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #ff6a00;
+}
+
+.modal-header p {
+  font-size: 14px;
+  opacity: 0.8;
+  color: #fff;
+}
+
+/* AGENT INFO */
+.agent-info {
+  margin-bottom: 20px;
+}
+
+.agent-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.agent-detail-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  width: 35px;
+  text-align: center;
+  color: #ff6a00;
+}
+
+.agent-detail-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-detail-label {
+  font-size: 12px;
+  opacity: 0.7;
+  color: #fff;
+}
+
+.agent-detail-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff6a00;
+}
+
+/* ACTION BUTTON */
+.modal-action-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #ff6a00;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-action-btn:hover {
+  background: #e65c00;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 480px) {
+  .contact-modal-card {
+    padding: 20px;
+  }
+}
+
+/* RISK CONTROLS SECTION */
+.risk-controls-section {
+  margin: 40px 0;
+  padding: 70px 20px;
+  background: #fbfbfb;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.risk-header h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.risk-header i {
+  color: #ff6a00;
+  margin-right: 8px;
+}
+
+.risk-header p {
+  max-width: 650px;
+  margin: 0 auto 60px;
+  color: #555;
+}
+
+/* GRID */
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+/* CARD */
+.risk-card {
+  background: #fff;
+  padding: 40px 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.risk-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #ff6a00;
+}
+
+.risk-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* ICON CIRCLE */
+.risk-icon-circle {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #fff3ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #ff6a00;
+  position: relative;
+  animation: floatIcon 3s ease-in-out infinite;
+  transition: 0.3s;
+}
+
+.risk-card:hover .risk-icon-circle {
+  background: #ff6a00;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.risk-card h3 {
+  font-size: 36px;
+  color: #ff6a00;
+  margin-bottom: 5px;
+}
+
+.risk-card h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.risk-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.custom-icon {
+  width: 60px;
+  height: auto;
+}
+
+/* ============ TESTIMONIALS CAROUSEL ============ */
+.testimonials-section {
+  margin: 40px 0;
+  padding: 70px 20px;
+  background: #fbfbfb;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.testimonials-section .section-heading {
+  margin-bottom: 50px;
+}
+
+.testimonials-section .section-heading h2 {
+  font-size: 32px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.testimonials-section .section-heading h2 i {
+  color: #ff6a00;
+  margin-right: 8px;
+}
+
+.testimonials-section .section-heading p {
+  color: #555;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Carousel wrapper */
+.testimonials-carousel-wrapper {
+  position: relative;
+  padding: 0 60px;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+}
+
+.testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Carousel buttons */
+.t-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff6a00;
+  color: #fff;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+  box-shadow: 0 4px 14px rgba(255, 106, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t-carousel-btn:hover {
+  background: #e65c00;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.5);
+}
+
+.t-carousel-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.t-carousel-btn.prev { left: 5px; }
+.t-carousel-btn.next { right: 5px; }
+
+/* Testimonial card */
+.t-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  padding: 30px 25px;
+  text-align: left;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.t-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6a00, #ff9f43);
+  border-radius: 18px 18px 0 0;
+}
+
+.t-card:hover {
+  transform: translateY(-8px);
+  border-color: #ff6a00;
+  box-shadow: 0 16px 40px rgba(255, 106, 0, 0.15);
+}
+
+.t-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.t-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6a00, #ff9f43);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.t-name {
+  font-weight: 700;
+  color: #111;
+  font-size: 15px;
+}
+
+.t-location {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.t-quote-icon {
+  font-size: 28px;
+  color: #ff6a00;
+  opacity: 0.3;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.t-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.t-stars {
+  margin-top: 16px;
+  color: #ff6a00;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .testimonials-carousel-wrapper {
+    padding: 0 42px;
+  }
+  .t-carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+  .t-card {
+    width: 260px;
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-carousel-wrapper {
+    padding: 0 36px;
+  }
+  .t-card {
+    width: 230px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="logo"><img src="images/logo.png" alt="WakandaFX Logo" class="custom-icon" /></div>
+  <nav>
+    <a href="index.html" class="btn btn-primary">Back Home</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <!-- WATERMARK LOGO -->
+  <img src="images/logo.png" alt="" class="hero-watermark" aria-hidden="true" />
+
+  <h1>Premium <span>Trading Signals</span></h1>
+  <p>
+    Receive high-probability trade alerts, meticulously crafted through technical and fundamental analysis, 
+    and supported by robust risk management strategies. Our signals empower traders to make confident, 
+    informed decisions while targeting consistent and optimal results in the market.
+  </p>
+  <button class="btn btn-primary" onclick="openContactModal('general')">Get Access Now</button>
+</section>
+
+<!-- CONTACT AGENT MODAL -->
+<div class="contact-modal-overlay" id="contact-modal-overlay" onclick="closeContactModal(event)">
+  <div class="contact-modal-card" onclick="event.stopPropagation()">
+    <button class="modal-close-btn" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+
+    <div class="modal-header">
+      <h2>Our Local Agent</h2>
+      <p>Direct contact information for deposits & withdrawals</p>
+    </div>
+
+    <div class="agent-info">
+      <div class="agent-detail">
+        <div class="agent-detail-icon"><i class="fas fa-user-circle"></i></div>
+        <div class="agent-detail-content">
+          <div class="agent-detail-label">Agent Name</div>
+          <div class="agent-detail-value">Wakanda</div>
+        </div>
+      </div>
+
+      <div class="agent-detail">
+        <div class="agent-detail-icon"><i class="fas fa-phone"></i></div>
+        <div class="agent-detail-content">
+          <div class="agent-detail-label">Phone Number</div>
+          <div class="agent-detail-value">+255 741 642 682</div>
+        </div>
+      </div>
+
+      <div class="agent-detail">
+        <div class="agent-detail-icon"><i class="fab fa-whatsapp" style="color:#f68f6a"></i></div>
+        <div class="agent-detail-content">
+          <div class="agent-detail-label">WhatsApp</div>
+          <div class="agent-detail-value">+255 741 642 682</div>
+        </div>
+      </div>
+
+      <div class="agent-detail">
+        <div class="agent-detail-icon"><i class="fas fa-envelope"></i></div>
+        <div class="agent-detail-content">
+          <div class="agent-detail-label">Email</div>
+          <div class="agent-detail-value">keniziodenis50@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="agent-detail">
+        <div class="agent-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="agent-detail-content">
+          <div class="agent-detail-label">Location</div>
+          <div class="agent-detail-value">Dar es Salaam, Tanzania</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="modal-action-btn" id="wa-action-btn" onclick="sendSignalWhatsApp()"><i class="fab fa-whatsapp" style="color:white"></i> Chat on WhatsApp</button>
+  </div>
+</div>
+
+<section class="features" id="features">
+  <div class="feature-card">
+    <h3>High Probability Entries</h3>
+    <p>
+      Carefully analyzed setups with clear entry points, stop loss, and take profit levels designed to maximize reward-to-risk ratios.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Strong Risk Management</h3>
+    <p>
+      Every signal includes proper lot guidance and structured risk control strategies to protect your capital.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Real-Time Alerts</h3>
+    <p>
+      Instant notifications so you never miss high-quality trading opportunities in Forex and major markets.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Consistent Performance</h3>
+    <p>
+      Built for disciplined traders seeking steady growth rather than gambling-based trading decisions.
+    </p>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Choose Your Package</h2>
+
+  <div class="price-cards">
+
+    <div class="price-card">
+      <h3>Weekly Plan</h3>
+      <div class="price">$10</div>
+      <ul>
+        <li>✔ Premium Trade Signals</li>
+        <li>✔ Entry, SL & TP Included</li>
+        <li>✔ Risk Management Guidance</li>
+        <li>✔ Real-Time Alerts</li>
+      </ul>
+      <button class="btn btn-primary" onclick="openContactModal('weekly')">Subscribe Weekly</button>
+    </div>
+
+    <div class="price-card">
+      <h3>Monthly Plan</h3>
+      <div class="price">$35</div>
+      <ul>
+        <li>✔ All Weekly Features</li>
+        <li>✔ Priority Signal Delivery</li>
+        <li>✔ Market Analysis Updates</li>
+        <li>✔ VIP Support</li>
+      </ul>
+      <button class="btn btn-primary" onclick="openContactModal('monthly')">Subscribe Monthly</button>
+    </div>
+
+    <!-- SEMI-ANNUAL PLAN -->
+    <div class="price-card featured">
+      <div class="popular-badge">🔥 Best Value</div>
+      <h3>Semi-Annual Plan</h3>
+      <div class="savings-tag">Save $10 vs Monthly!</div>
+      <div class="price">$200</div>
+      <ul>
+        <li>✔ All Monthly Features</li>
+        <li>✔ 6 Months Full Access</li>
+        <li>✔ Exclusive Trade Setups</li>
+        <li>✔ Weekly Market Briefings</li>
+      </ul>
+      <button class="btn btn-primary" onclick="openContactModal('semiannual')">Subscribe 6 Months</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRADE RISK CONTROLS -->
+<section class="risk-controls-section">
+  <div class="risk-header">
+    <h2><i class="fas fa-shield-alt"></i> Trade Risk Controls</h2>
+    <p>Protection Comes First — Our risk management ensures capital preservation and long-term success</p>
+  </div>
+
+  <div class="risk-grid">
+
+    <div class="risk-card">
+      <div class="risk-icon-circle">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>2-5%</h3>
+      <h4>Risk Per Trade</h4>
+      <p>Limit risk on any single trade to 2% of total capital to minimize losses and protect your account.</p>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-icon-circle">
+        <i class="fas fa-balance-scale"></i>
+      </div>
+      <h3>1:2–5</h3>
+      <h4>Risk-Reward Ratio</h4>
+      <p>Ensure profits consistently outweigh risks for long-term growth and sustainable trading performance.</p>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-icon-circle">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <h3>10%</h3>
+      <h4>Maximum Daily Loss</h4>
+      <p>Daily losses must not exceed 10% of total capital. Trading halts if limit is reached.</p>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-icon-circle">
+        <i class="fas fa-hourglass-half"></i>
+      </div>
+      <h3>24h</h3>
+      <h4>Emotional Reset</h4>
+      <p>24-hour break after three consecutive losses to regain clarity and reset psychological discipline.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials-section">
+  <div class="section-heading">
+    <h2><i class="fas fa-comments"></i> What Our Clients Say</h2>
+    <p>Real experiences from our signal followers real people, real results.</p>
+  </div>
+
+  <div class="testimonials-carousel-wrapper">
+    <button class="t-carousel-btn prev" onclick="scrollTestimonials(-320)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="t-carousel-btn next" onclick="scrollTestimonials(320)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="testimonials-track" id="testimonials-track">
+
+      <!-- Card 1 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">JM</div>
+          <div>
+            <div class="t-name">Juma Mwangi</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Dar es Salaam</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Tangu nilipoanza kupata signals za WakandaFX, mtaji wangu umekua kwa kiasi kikubwa sana. Kila signal inakuja na SL na TP wazi, hakuna mkanganyiko. Nimeridhika mno!"</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">FK</div>
+          <div>
+            <div class="t-name">Fatuma Kimani</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Arusha</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Nilikuwa naogopa sana kufuata signals za mtu mwingine, lakini WakandaFX wamenishinda kwa ubora. Win rate yao ni ya kweli kabisa, sio madai tu ya bure."</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">BN</div>
+          <div>
+            <div class="t-name">Baraka Ngozi</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Mwanza</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Wiki moja ya kwanza tu nilipiga profit ya $47 kwa mtaji mdogo wa $100. Signals zinaingia kwa wakati muafaka na analysis ni sahihi sana. Nzuri sana!"</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">SH</div>
+          <div>
+            <div class="t-name">Salma Hassan</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Zanzibar</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Jamani, hii service ni tofauti kabisa na nyingine niliojaribu. Wakanda anaeleza kila kitu vizuri — kwa nini aingia trade na jinsi ya kulinda pesa yako. Ahsante sana!"</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">AM</div>
+          <div>
+            <div class="t-name">Amani Msuya</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Dodoma</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Nilijaribu signals nyingi za bure mtandaoni, hazikufanya kazi. WakandaFX wamenionyesha jinsi trading ya kweli inavyofanywa. Pesa niliyolipa ni investment, si gharama."</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">DP</div>
+          <div>
+            <div class="t-name">Dennis Pius</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Dar es Salaam</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Msaada wao ni wa haraka sana — ukiuliza swali unapata jibu ndani ya dakika. Signals zinafika mapema kabla ya soko kufunguka. Nimewapendekeza marafiki zangu wengi."</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">RC</div>
+          <div>
+            <div class="t-name">Rose Chagula</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Morogoro</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Kama mama wa nyumbani ninayefanya kazi kwa wakati mdogo, signals hizi zinanisaidia kupata pesa bila kukaa screen muda wote. Rahisi kufuata na matokeo mazuri daima."</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">TO</div>
+          <div>
+            <div class="t-name">Twaha Omar</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Tanga</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Mwezi wangu wa kwanza nilifuata signals zote na nilipata profit ya 34%. Hawasemi maneno ya kujisifu tu — wanaonyesha track record halisi. Hii ndiyo tofauti kubwa."</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">ML</div>
+          <div>
+            <div class="t-name">Miriam Lema</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Moshi</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Nilikuwa nafikiri trading ni ya watu wa elimu tu. WakandaFX wamenionyesha kwamba ukifuata signals vizuri na manage risk yako, hata mtu wa kawaida anaweza kufanikiwa."</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="t-card">
+        <div class="t-card-header">
+          <div class="t-avatar">GS</div>
+          <div>
+            <div class="t-name">Gabriel Shirima</div>
+            <div class="t-location"><i class="fas fa-map-marker-alt" style="color:#ff6a00;font-size:10px"></i> Iringa</div>
+          </div>
+        </div>
+        <span class="t-quote-icon"><i class="fas fa-quote-left"></i></span>
+        <p class="t-text">"Nawapongeza sana team ya WakandaFX. Nimekuwa subscriber kwa miezi mitatu sasa na sijawahi kukatishwa tamaa. Signals zinaingia sahihi, risk inashughulikiwa vizuri. Keep it up!"</p>
+        <div class="t-stars">★★★★★</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Start Trading Smarter Today</h2>
+  <p>
+    Join hundreds of traders improving their consistency with our structured and disciplined trading signals service.
+    Your success begins with better decisions.
+  </p>
+  <a href="pricing.html" class="btn">Join Now</a>
+</section>
+
+</div>
+
+<footer>
+  © 2026 WakandaFX Trading Signals Service. Trade Responsibly.
+</footer>
+
+<script>
+const waNumber = '255741642682';
+let currentPlan = 'general';
+
+const signalMessages = {
+  weekly: `Hello WakandaFX! 👋
+
+I'm interested in subscribing to the *Weekly Trading Signals* plan at $10/week.
+
+I'd love to receive high-probability trade alerts with entry points, stop loss, and take profit levels so I can trade with more confidence and discipline.
+
+How do I subscribe and start receiving the signals? Looking forward to it! 📡`,
+
+  monthly: `Hello WakandaFX! 👋
+
+I'm interested in the *Monthly Trading Signals* plan at $35/month.
+
+I'm looking for priority signal delivery, market analysis updates, and VIP support to help me stay consistent and disciplined in my trading.
+
+Could you guide me on how to subscribe? I'm excited to get started! 🚀`,
+
+  semiannual: `Hello WakandaFX! 👋
+
+I'm interested in the *Semi-Annual Trading Signals* plan at $200 for 6 months.
+
+This looks like the best value plan and I'd love to get 6 months of full access, exclusive trade setups, weekly market briefings, and the dedicated VIP channel.
+
+Could you guide me on how to subscribe and get started? I'm ready to commit! 💼📊`,
+
+  general: `Hello WakandaFX! 👋
+
+I'm interested in your *Premium Trading Signals* service and would love to get access.
+
+Could you please share more details about the available plans and how to get started? I'm ready to take my trading to the next level! 📊`
+};
+
+function openContactModal(plan) {
+  currentPlan = plan || 'general';
+  document.getElementById("contact-modal-overlay").classList.add("active");
+}
+
+function closeContactModal(event) {
+  if (!event || event.target.id === "contact-modal-overlay") {
+    document.getElementById("contact-modal-overlay").classList.remove("active");
+  }
+}
+
+function sendSignalWhatsApp() {
+  const message = signalMessages[currentPlan] || signalMessages.general;
+  const encoded = encodeURIComponent(message);
+  window.open(`https://wa.me/${waNumber}?text=${encoded}`, '_blank');
+}
+
+function scrollTestimonials(dist) {
+  const track = document.getElementById("testimonials-track");
+  if (track) {
+    track.scrollBy({ left: dist, behavior: 'smooth' });
+  }
+}
+</script>
+
+</body>
+</html>
